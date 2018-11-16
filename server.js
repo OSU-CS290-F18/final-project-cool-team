@@ -3,6 +3,7 @@ var url = require('url');
 var path = require('path');
 var server = http.createServer(requestHandler)
 var fs = require('fs');
+var port= process.env.PORT || 3000;
 
 server.listen(port, function (err) {
     if(err) {
