@@ -1,4 +1,4 @@
-Cameron- Search module 
+Cameron- Search module,new post sidebar 
 Matthew- Posts, img 
 Sam- 
 Steven- Sort 
