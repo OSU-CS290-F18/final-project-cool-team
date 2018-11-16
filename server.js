@@ -15,6 +15,7 @@ console.log('working on 3000');
 
 function requestHandler(request, response) {
     console.log("== Request was received");
+    console.log(request.url);
     var header;
 
     if(request.url === '/index.html'){

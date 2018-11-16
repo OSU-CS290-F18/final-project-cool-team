@@ -6,9 +6,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="/style.css">
 
-    <script src="/public/index.js" charset="utf-8" defer></script>
+    <script src="/index.js" charset="utf-8" defer></script>
 
   </head>
 
@@ -39,29 +39,8 @@
 
       </section>
 
-
-      <div class="filter">
-        <fieldset id="filter-option" class="filter-fieldset">
-          <legend>Filters</legend>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-old" value="old">
-            <label for="filter-option-old">Old</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-new" value="new">
-            <label for="filter-option-new">New</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-popular" value="popular">
-            <label for="filter-option-popular">Popular</label>
-          </div>
-        </fieldset>
-      </div>
-
-      <button id="filter-button" class="action-button">Go</button>
     </main>
 
 
   </body>
-
 </html>
