@@ -21,3 +21,32 @@ a {
   display: inline;
 
 }
+
+.image {
+  display: inline-block;
+  vertical-align: top;
+
+  height: 600px;
+  width: 750px;
+  margin: 5px;
+  padding: 5px;
+  border: .5px;
+  border-style: groove;
+  border-radius: 6px;
+
+}
+
+.image-contents img {
+  max-height: 100%;
+  max-width: 100%;
+  align-items: center;
+}
+
+
+.image-info-container {
+  width: 100%;
+}
+
+.image-date {
+  margin-right: -5px;
+}
