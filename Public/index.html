@@ -15,32 +15,47 @@
 
 
   <body>
-
-    <h1 class "site-title"><a href="#">Fotos</a></h1>
-
-    <main class="content">
-
-      <section id="images">
-
-        <div class="image">
-          <div class="image-contents">
-            <img src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/europeslostf.jpg" alt="Forest">
-          </div>
-          <div class="image-info-container">
-            <a href="#" class="image-title">Forest</a>
-            <span class="image-tags">forest nature outside</span>
-            <span class="image-date">02/10/1999</span>
-            <div id="image-comments">
-              <span class="image-comment">this is cool!</span>
-              <span class="image-comment">wow!</span>
+		<aside class="search-container">
+			
+			<div class="filter-input-container">
+				<label for="filter-text" class="filter-input-label">Name</label>
+				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
             </div>
-          </div>
-        </div>
-
-      </section>
-
-    </main>
-
-
+			
+			<section id = "tags"> 
+				 <div class = "tag"> 
+					 <input type="checkbox" id="gaming" name="gaming">
+					 <label for="gaming">gaming</label>
+				 </div> 
+			</section>
+			
+			<div class="filter-input-container">
+				<label for="filter-text" class="filter-input-label">Date Posted</label>
+				<input type="text" name="filter-text-date" id="filter-text" class="filter-input" placeholder="ex. xx/xx/xxxx">
+            </div>
+			
+			<button id="filter-update-button" class="action-button">Update</button>
+		</aside>
+		
+		<aside class = "newpost-container"> 
+			<button id= "newpost-button" class="action-button">New Post</button>
+			
+			<div class="newpost-input-container">
+				<label for="newpost-text" class="filter-input-label">Post Name</label>
+				<input type="text" name="newpost-name" id="newpost-text" class="newpost-input">
+            </div>
+			<section id = "tags"> 
+				 <div class = "tag"> 
+					 <input type="checkbox" id="gaming" name="gaming">
+					 <label for="gaming">gaming</label>
+				 </div> 
+			</section>
+			<div class="newpost-input-container">
+				<label for="newpost-text" class="filter-input-label">Date</label>
+				<input type="text" name="newpost-date" id="newpost-text" class="newpost-input" placeholder="ex. xx/xx/xxxx">
+            </div>
+			<button id= "post-button" class="action-button">Post</button>
+		
+		</aside>
   </body>
 </html>
