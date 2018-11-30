@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = 'utf-8'>
+    <title>Fotos</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="/index.js" charset="utf-8" defer></script>
+
+  </head>
+
+
+
+  <body>
+
+    <h1 class "site-title"><a href="#">Fotos</a></h1>
+
+    <main class="content">
+
+      <section id="images">
+
+        <div class="image">
+          <div class="image-contents">
+            <img src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/europeslostf.jpg" alt="Forest">
+          </div>
+          <div class="image-info-container">
+            <a href="#" class="image-title">Forest</a>
+            <span class="image-tags">forest nature outside</span>
+            <span class="image-date">02/10/1999</span>
+            <div id="image-comments">
+              <span class="image-comment">this is cool!</span>
+              <span class="image-comment">wow!</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+
+  </body>
+</html>

@@ -1,3 +1,95 @@
 body {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #484848;
+
 
 }
+
+.site-title {
+  font-family: "Rubik", serif;
+  font-size: 60px;
+  margin: 0 0 0 10px;
+  color: #484848;
+}
+
+.content {
+  display: inline;
+
+}
+
+.image {
+  display: inline-block;
+  vertical-align: top;
+
+  height: 600px;
+  width: 750px;
+  margin: 5px;
+  padding: 5px;
+  border: .5px;
+  border-style: groove;
+  border-radius: 6px;
+
+}
+
+.image-contents img {
+  max-height: 100%;
+  max-width: 100%;
+  align-items: center;
+}
+
+
+.image-info-container {
+  width: 100%;
+}
+
+.image-date {
+  margin-right: -5px;
+}
+.filter-button {
+  background-color: #45eb90;
+  color: rgb(0, 0, 0);
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.filter-button:hover, .filter-button:focus {
+  background-color: rgb(2, 167, 104);
+  color: rgb(255, 255, 255);
+}
+
+.filter {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-content {
+  display: none;
+  position: absolute;
+  background-color: #45eb90;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.filter-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.filter a:hover {
+  background-color: #288b55;
+  color: rgb(255, 255, 255);
+}
+
+.show {display: block;}

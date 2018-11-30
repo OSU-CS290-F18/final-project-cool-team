@@ -6,9 +6,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <script src="/index.js" charset="utf-8" defer></script>
+    <script src="index.js" charset="utf-8" defer></script>
 
   </head>
 
@@ -16,27 +16,42 @@
 
   <body>
 
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
+    <h1 class "site-title"><a href="#">Fotos</a></h1>
+
+    <main class="content">
+
+      <section id="images">
+
+        <div class="image">
+          <div class="image-contents">
+            <img src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/europeslostf.jpg" alt="Forest">
+            <div class="image-info-container">
+              <a href="#" class="image-title">Forest</a>
+              <p>
+                <span class="image-tags">forest nature outside</span>
+                <span class="image-date">02/10/1999</span>
+              </p>
+              <div id="image-comments">
+                <p>Comments:</p>
+                <span class="image-comment">this is cool!</span>
+                <span class="image-comment">wow!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <body>
+        <div class="filter">
+        <button onclick="filterFunction()" class="filter-button">Filter</button>
+          <div id="myfilter" class="filter-content">
+            <a href="#old">Old</a>
+            <a href="#new">New</a>
+            <a href="#popular">Popular</a>
+          </div>
+        </div>
+        
 
   </body>
-  <div class="filter">
-    <fieldset id="filter-option" class="filter-fieldset">
-      <legend>Filters</legend>
-      <div>
-        <input type="checkbox" name="filter-option" id="filter-option-old" value="old">
-        <label for="filter-option-old">Old</label>
-      </div>
-      <div>
-        <input type="checkbox" name="filter-option" id="filter-option-new" value="new">
-        <label for="filter-option-new">New</label>
-      </div>
-      <div>
-        <input type="checkbox" name="filter-option" id="filter-option-popular" value="popular">
-        <label for="filter-option-popular">Popular</label>
-      </div>
-    </fieldset>
-  </div>
 
-  <button id="filter-button" class="action-button">Go</button>
 </html>
