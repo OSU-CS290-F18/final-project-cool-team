@@ -3,6 +3,7 @@ var url = require('url');
 var path = require('path');
 var server = http.createServer(requestHandler)
 var fs = require('fs');
+var port= process.env.PORT || 3000;
 
 server.listen(port, function (err) {
     if(err) {
@@ -14,6 +15,7 @@ console.log('working on 3000');
 
 function requestHandler(request, response) {
     console.log("== Request was received");
+    console.log(request.url);
     var header;
 
     if(request.url === '/index.html'){
