@@ -20,6 +20,8 @@ a {
 .content {
   display: inline;
 
+.image-date {
+  margin-right: -5px;
 }
 
 .image {
