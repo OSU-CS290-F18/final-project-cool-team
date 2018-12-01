@@ -62,6 +62,58 @@
       </div>
 
       <button id="filter-button" class="action-button">Go</button>
+
+
+      <aside class="search-container">
+			<a class = "module-title" id="search-title">search</a>
+			<div class="filter-input-container">
+				<label for="filter-text" class="filter-input-label">Name</label>
+				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
+            </div>
+
+			<section id = "tags">
+				 <a id = "tag_title">tags</a>
+				 <div class = "tag">
+					 <input type="checkbox" id="gaming" name="gaming">
+					 <label for="gaming">Cats</label>
+
+				 </div>
+			</section>
+
+			<div class="filter-input-container">
+				<label for="filter-text" class="filter-input-label">Date</label>
+				<input type="text" name="filter-text-date" id="filter-text" class="filter-input" placeholder="ex. xx/xx/xxxx">
+            </div>
+
+			<button id="filter-update-button" class="action-button">Update</button>
+		</aside>
+
+		<button id= "newpost-button" class="action-button">New Post</button>
+
+		<aside class = "newpost-container" id = "newpost-container" visibility : hidden>
+
+
+			<div class="newpost-input-container">
+				<label for="newpost-text" class="filter-input-label">Post Name</label>
+				<input type="text" name="newpost-name" id="newpost-text" class="newpost-input">
+            </div>
+			 <a id = "tag_title">tags</a> 
+			<section id = "tags">
+				 <div class = "tag">
+					 <input type="checkbox" id="gaming" name="gaming">
+					 <label for="gaming">Star Wars</label>
+					 <button id= "add-tag-button" class="action-button">new tag</button>
+				 </div>
+
+			</section>
+
+			<button id= "cancel-button" class="action-button">cancel</button>
+
+			<button id= "post-button" class="action-button">Post</button>
+
+		</aside>
+
+
     </main>
 
 
