@@ -42,26 +42,19 @@
 
       </section>
 
-
       <div class="filter">
-        <fieldset id="filter-option" class="filter-fieldset">
-          <legend>Filters</legend>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-old" value="old">
-            <label for="filter-option-old">Old</label>
+        <button onclick="filterFunction()" class="filter-button">Filter</button>
+          <div id="myfilter" class="filter-content">
+            <a href="#old">Old</a>
+            <a href="#new">New</a>
+            <a href="#popular">Popular</a>
           </div>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-new" value="new">
-            <label for="filter-option-new">New</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-popular" value="popular">
-            <label for="filter-option-popular">Popular</label>
-          </div>
-        </fieldset>
-      </div>
+        </div>
 
-      <button id="filter-button" class="action-button">Go</button>
+
+
+
+
 
 
       <aside class="search-container">
@@ -97,7 +90,7 @@
 				<label for="newpost-text" class="filter-input-label">Post Name</label>
 				<input type="text" name="newpost-name" id="newpost-text" class="newpost-input">
             </div>
-			 <a id = "tag_title">tags</a> 
+			 <a id = "tag_title">tags</a>
 			<section id = "tags">
 				 <div class = "tag">
 					 <input type="checkbox" id="gaming" name="gaming">
