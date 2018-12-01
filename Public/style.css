@@ -26,6 +26,11 @@ header{
   display: inline;
 }
 
+#images{
+	width: 650 px;
+	
+
+}
 .image {
   display: block;
   vertical-align: top;
@@ -116,6 +121,14 @@ border-radius: 10px;
 width:100px;
 }
 
+#newpost-button{
+	border-radius:5px;
+	background-color:GreenYellow;
+	border: 1px solid black;
+	width:160px;
+	height:40px;
+	margin-left:20px;
+}
 #post-button{
 	background-color:GreenYellow;
 	border-radius:5px;
