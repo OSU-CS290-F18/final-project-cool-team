@@ -10,13 +10,16 @@ a {
 
 }
 
-.site-title {
-  font-family: "Rubik", serif;
-  font-size: 60px;
-  margin: 0 0 0 10px;
-  color: #484848;
+#site-title-img{
+	width:150px;
+	height:150px;
 }
 
+header{
+	background-color: #b9ff91;
+	border-bottom: 1px solid black;
+
+}
 .content {
   display: inline;
 
