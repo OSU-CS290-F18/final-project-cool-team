@@ -50,3 +50,102 @@ a {
 .image-date {
   margin-right: -5px;
 }
+
+}
+.filter-input{
+	width:100px;
+
+}
+.search-container{
+margin:20px;
+border: 1px solid black;
+width: 150px;
+text-align:center;
+padding:5px;
+background-color: #b9ff91;
+border-radius: 10px;
+}
+.tag{
+overflow: scroll;
+width:100px;
+ height:100px;
+ margin:auto;
+ border:1px solid black;
+}
+.filter-input-container{
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+.module-title{
+	font-size:30px
+}
+#filter-update-button{
+	background-color:GreenYellow;
+	border-radius:5px;
+	width:140px;
+	height:25px;
+	border: 1px solid black;
+}
+#filter-update-button:active{
+transform: translateY(1px);
+
+}
+.newpost-container{
+margin:20px;
+border: 1px solid black;
+width: 150px;
+text-align:center;
+padding:5px;
+background-color: #b9ff91;
+border-radius: 10px;
+
+}
+.newpost-input-container{
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+.newpost-input{
+width:100px;
+}
+
+#post-button{
+	background-color:GreenYellow;
+	border-radius:5px;
+	width:140px;
+	height:25px;
+	border: 1px solid black;
+}
+#post-button:active{
+transform: translateY(1px);
+
+}
+#cancel-button{
+background-color:GreenYellow;
+	border-radius:5px;
+	width:50px;
+	height:25px;
+	border: 1px solid black;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+#cancel-button:active{
+transform: translateY(1px);
+
+}
+
+#add-tag-button{
+background-color:GreenYellow;
+	border-radius:5px;
+	width:80px;
+	height:20px;
+	border: 1px solid black;
+	margin-bottom: 5px;
+	margin-top: 5px;
+
+}
+#add-tag-button:active{
+transform: translateY(1px);
+
+}
