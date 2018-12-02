@@ -1,1 +1,99 @@
-// JavaScript source code
+<main class="content">
+
+    <div class="search-container">
+  		<a class = "module-title" id="search-title">search</a>
+  		<div class="filter-input-container">
+  			<label for="filter-text" class="filter-input-label">Post Name</label>
+  			<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
+            </div>
+
+  		<section id = "tags">
+  				<a id = "tag_title">tags</a>
+  				<div class = "tag">
+  					<input type="checkbox" id="gaming" name="gaming">
+  					<label for="gaming">Cats</label>
+
+  				</div>
+  		</section>
+
+  		<div class="filter-input-container">
+  			<label for="filter-text" class="filter-input-label">Date Posted</label>
+  			<input type="text" name="filter-text-date" id="filter-text" class="filter-input" placeholder="ex. xx/xx/xxxx">
+            </div>
+
+		<button id="filter-update-button" class="action-button">Update</button>
+	</div>
+
+    <section id="images">
+
+	<--replace with foto.handlebars-->
+	{{#each fotos}}
+		{{>foto}}
+	{{/each}}
+
+    <div class="image">
+        <div class="image-contents">
+        <a href="post.html"><img src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/europeslostf.jpg" alt="Forest"></a>
+        <div class="image-info-container">
+            <a href="#" class="image-title">Forest</a>
+            <div class="image-info-container-tags-dates">
+            <span class="image-tags">#forest #nature #outside</span>
+            <span class="image-date">02/10/1999</span>
+            </div>
+            <div id="image-comments">
+            Comments:
+            <div class="image-comment">this is cool!</div>
+            <div class="image-comment">wow!</div>
+            </div>
+            <div id="add-comment">
+            <label for="add-comment-input" class="comment-label">Comment</label>
+        			<input type="text" name="add-comment-label" id="add-comment-input" class="comment-label">
+            </div>
+        </div>
+        </div>
+    </div>
+
+	<--replace with foto.handlebars
+
+    </section>
+
+    <div class="filter">
+    <button onclick="filterFunction()" class="filter-button">Filter</button>
+        <div id="myfilter" class="filter-content">
+        <a href="#old">Old</a>
+        <a href="#new">New</a>
+        <a href="#popular">Popular</a>
+        </div>
+    </div>
+
+
+	<button id= "newpost-button" class="action-button">New Post</button>
+
+	<aside class = "newpost-container" id = "newpost-container" visibility : hidden>
+
+
+		<div class="newpost-input-container">
+			<label for="newpost-text" class="filter-input-label">Post Name</label>
+			<input type="text" name="newpost-name" id="newpost-text" class="newpost-input">
+        </div>
+		<div class="newpost-input-container">
+			<label for="newpost-text" class="filter-input-label">img url</label>
+			<input type="text" name="newpost-url" id="newpost-text" class="newpost-input">
+        </div>
+		<a id = "tag_title">tags</a>
+		<section id = "tags">
+				<div class = "tag">
+					<input type="checkbox" id="gaming" name="gaming">
+					<label for="gaming">Star Wars</label>
+					<button id= "add-tag-button" class="action-button">new tag</button>
+				</div>
+
+		</section>
+
+		<button id= "cancel-button" class="action-button">cancel</button>
+
+		<button id= "post-button" class="action-button">Post</button>
+
+	</aside>
+
+</main>
