@@ -12,56 +12,111 @@
 
   </head>
 
+  <header>
+
+	 <div class="site-title-container">
+        <img id = "site-title-img" src="fotos.png" alt="fotos">
+      </div>
+  </header>
 
 
   <body>
 
-    <h1 class "site-title"><a href="#">Fotos</a></h1>
+
 
     <main class="content">
+
+      <div class="search-container">
+  			<a class = "module-title" id="search-title">search</a>
+  			<div class="filter-input-container">
+  				<label for="filter-text" class="filter-input-label">Post Name</label>
+  				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
+              </div>
+
+  			<section id = "tags">
+  				 <a id = "tag_title">tags</a>
+  				 <div class = "tag">
+  					 <input type="checkbox" id="gaming" name="gaming">
+  					 <label for="gaming">Cats</label>
+
+  				 </div>
+  			</section>
+
+  			<div class="filter-input-container">
+  				<label for="filter-text" class="filter-input-label">Date Posted</label>
+  				<input type="text" name="filter-text-date" id="filter-text" class="filter-input" placeholder="ex. xx/xx/xxxx">
+              </div>
+
+			<button id="filter-update-button" class="action-button">Update</button>
+		</div>
 
       <section id="images">
 
         <div class="image">
           <div class="image-contents">
-            <img src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/europeslostf.jpg" alt="Forest">
+            <a href="post.html"><img src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/europeslostf.jpg" alt="Forest"></a>
             <div class="image-info-container">
               <a href="#" class="image-title">Forest</a>
-              <p>
-                <span class="image-tags">forest nature outside</span>
+              <div class="image-info-container-tags-dates">
+                <span class="image-tags">#forest #nature #outside</span>
                 <span class="image-date">02/10/1999</span>
-              </p>
+              </div>
               <div id="image-comments">
-                <p>Comments:</p>
-                <span class="image-comment">this is cool!</span>
-                <span class="image-comment">wow!</span>
+                Comments:
+                <div class="image-comment">this is cool!</div>
+                <div class="image-comment">wow!</div>
+              </div>
+              <div id="add-comment">
+                <label for="add-comment-input" class="comment-label">Comment</label>
+        				<input type="text" name="add-comment-label" id="add-comment-input" class="comment-label">
               </div>
             </div>
           </div>
         </div>
 
+	
+
       </section>
 
-
       <div class="filter">
-        <fieldset id="filter-option" class="filter-fieldset">
-          <legend>Filters</legend>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-old" value="old">
-            <label for="filter-option-old">Old</label>
+        <button onclick="filterFunction()" class="filter-button">Filter</button>
+          <div id="myfilter" class="filter-content">
+            <a href="#old">Old</a>
+            <a href="#new">New</a>
+            <a href="#popular">Popular</a>
           </div>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-new" value="new">
-            <label for="filter-option-new">New</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filter-option" id="filter-option-popular" value="popular">
-            <label for="filter-option-popular">Popular</label>
-          </div>
-        </fieldset>
-      </div>
+        </div>
 
-      <button id="filter-button" class="action-button">Go</button>
+
+		<button id= "newpost-button" class="action-button">New Post</button>
+
+		<aside class = "newpost-container" id = "newpost-container" visibility : hidden>
+
+
+			<div class="newpost-input-container">
+				<label for="newpost-text" class="filter-input-label">Post Name</label>
+				<input type="text" name="newpost-name" id="newpost-text" class="newpost-input">
+            </div>
+			<div class="newpost-input-container">
+				<label for="newpost-text" class="filter-input-label">img url</label>
+				<input type="text" name="newpost-url" id="newpost-text" class="newpost-input">
+            </div>
+			<a id = "tag_title">tags</a>
+			<section id = "tags">
+				 <div class = "tag">
+					 <input type="checkbox" id="gaming" name="gaming">
+					 <label for="gaming">Star Wars</label>
+					 <button id= "add-tag-button" class="action-button">new tag</button>
+				 </div>
+
+			</section>
+
+			<button id= "cancel-button" class="action-button">cancel</button>
+
+			<button id= "post-button" class="action-button">Post</button>
+
+		</aside>
+
     </main>
 
 
