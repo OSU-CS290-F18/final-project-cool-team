@@ -11,6 +11,15 @@ a {
 
 
 }
+#site-title-img{
+	width:150px;
+	height:150px;
+}
+header{
+	background-color: #b9ff91;
+	border-bottom: 1px solid black;
+
+}
 
 #site-title-img{
 	width:150px;
@@ -71,10 +80,13 @@ display:block;
 margin:20px;
 border: 1px solid black;
 width: 150px;
+height: 310px;
 text-align:center;
 padding:5px;
 background-color: #b9ff91;
 border-radius: 10px;
+top:25%;
+right:85%;
 }
 .tag{
 overflow: scroll;
@@ -110,6 +122,21 @@ text-align:center;
 padding:5px;
 background-color: #b9ff91;
 border-radius: 10px;
+position:fixed;
+top:25%;
+left:85%
+
+}
+#newpost-button{
+border-radius:5px;
+	background-color:GreenYellow;
+	border: 1px solid black;
+	width:160px;
+	height:40px;
+	margin-left:20px;
+	position:fixed;
+	top:30%;
+	left:85%
 
 }
 .newpost-input-container{
@@ -118,7 +145,7 @@ border-radius: 10px;
 
 }
 .newpost-input{
-width:100px;
+ width:100px;
 }
 
 #newpost-button{
@@ -186,8 +213,10 @@ transform: translateY(1px);
 }
 
 .filter {
-  position: relative;
+ position: absolute;
   display: inline-block;
+  top:25%;
+  left:82%;
 }
 
 .filter-content {

@@ -7,7 +7,27 @@ function show_newpost(){
 	document.getElementById('newpost-button').style.visibility = 'hidden';
 	document.getElementById('newpost-container').style.visibility = 'visible';
 	document.getElementById('newpost-container').style.display = 'block';
+	document.getElementById('post-button').style.visibility = 'visible';
+	document.getElementById('post-button').style.display = 'block';
 }
+function hide_newpost(){
+	document.getElementById('newpost-button').style.visibility = 'visible';
+	document.getElementById('newpost-container').style.visibility = 'hidden';
+	document.getElementById('newpost-button').style.display = 'block';
+	document.getElementById('post-button').style.visibility = 'hidden';
+	document.getElementById('tag-add').style.visibility = 'hidden';
+}
+function show_tag_maker(){
+	document.getElementById('tag-add').style.visibility = 'visible';
+	document.getElementById('tag-add').style.display = 'block';
+	document.getElementById('post-button').style.visibility = 'hidden';
+}
+function hide_tag_maker(){
+	document.getElementById('post-button').style.visibility = 'visible';
+	document.getElementById('post-button').style.display = 'block';
+	document.getElementById('tag-add').style.visibility = 'hidden';
+}
+
 
 function hide_newpost(){
 	document.getElementById('newpost-button').style.visibility = 'visible';
