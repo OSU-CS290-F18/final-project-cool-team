@@ -33,14 +33,9 @@ header{
 }
 
 #images {
-<<<<<<< HEAD
   display: inline-block;
   margin: 10px;
 }
-=======
-  display: block;
-  }
->>>>>>> 7d873e8eaa5dc75c7d1a65f1550e674f833ed99b
 
 #add-comment {
   padding-top: 10px;
@@ -87,6 +82,7 @@ display:block;
 margin:20px;
 border: 1px solid black;
 width: 150px;
+height: 310px;
 text-align:center;
 padding:5px;
 background-color: #b9ff91;
