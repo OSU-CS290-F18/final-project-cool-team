@@ -11,12 +11,18 @@
     <script src="index.js" charset="utf-8" defer></script>
 
   </head>
-
+	
+  <header>
+  
+	 <div class="site-title-container">
+        <img id = "site-title-img" src="fotos.png" alt="fotos">
+      </div>
+  </header>
 
 
   <body>
 
-    <h1 class "site-title"><a href="#">Fotos</a></h1>
+   
 
     <main class="content">
 
@@ -64,10 +70,10 @@
       <aside class="search-container">
 			<a class = "module-title" id="search-title">search</a>
 			<div class="filter-input-container">
-				<label for="filter-text" class="filter-input-label">Name</label>
+				<label for="filter-text" class="filter-input-label">Post Name</label>
 				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
             </div>
-
+			
 			<section id = "tags">
 				 <a id = "tag_title">tags</a>
 				 <div class = "tag">
@@ -78,7 +84,7 @@
 			</section>
 
 			<div class="filter-input-container">
-				<label for="filter-text" class="filter-input-label">Date</label>
+				<label for="filter-text" class="filter-input-label">Date Posted</label>
 				<input type="text" name="filter-text-date" id="filter-text" class="filter-input" placeholder="ex. xx/xx/xxxx">
             </div>
 
@@ -94,7 +100,11 @@
 				<label for="newpost-text" class="filter-input-label">Post Name</label>
 				<input type="text" name="newpost-name" id="newpost-text" class="newpost-input">
             </div>
-			 <a id = "tag_title">tags</a>
+			<div class="newpost-input-container">
+				<label for="newpost-text" class="filter-input-label">img url</label>
+				<input type="text" name="newpost-url" id="newpost-text" class="newpost-input">
+            </div>
+			<a id = "tag_title">tags</a>
 			<section id = "tags">
 				 <div class = "tag">
 					 <input type="checkbox" id="gaming" name="gaming">
@@ -109,7 +119,6 @@
 			<button id= "post-button" class="action-button">Post</button>
 
 		</aside>
-
 
     </main>
 
