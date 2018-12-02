@@ -1,8 +1,10 @@
-// js file
 
 
 document.getElementById('newpost-button').onclick = function(){show_newpost()};
-document.getElementById('cancel-button').onclick = function(){hide_newpost()}
+document.getElementById('cancel-button').onclick = function(){hide_newpost()};
+document.getElementById('add-tag-button').onclick = function(){show_tag_maker()};
+document.getElementById('cancel-newtag-button').onclick = function(){hide_tag_maker()};
+
 function show_newpost(){
 	document.getElementById('newpost-button').style.visibility = 'hidden';
 	document.getElementById('newpost-container').style.visibility = 'visible';
@@ -29,12 +31,6 @@ function hide_tag_maker(){
 }
 
 
-function hide_newpost(){
-	document.getElementById('newpost-button').style.visibility = 'visible';
-	document.getElementById('newpost-container').style.visibility = 'hidden';
-	document.getElementById('newpost-button').style.display = 'block';
-
-}
 function filterFunction() {
     document.getElementById("myfilter").classList.toggle("show");
 }
