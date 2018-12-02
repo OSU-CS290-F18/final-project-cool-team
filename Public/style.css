@@ -86,7 +86,8 @@ padding:5px;
 background-color: #b9ff91;
 border-radius: 10px;
 top:25%;
-right:85%;
+left:70%;
+position:fixed;
 }
 .tag{
 overflow: scroll;
@@ -215,8 +216,8 @@ transform: translateY(1px);
 .filter {
  position: absolute;
   display: inline-block;
-  top:25%;
-  left:82%;
+  top:30%;
+  left:60%;
 }
 
 .filter-content {
