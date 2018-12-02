@@ -32,8 +32,8 @@ header{
 }
 
 #images {
-  display: inline-block;
-}
+  display: block;
+  }
 
 #add-comment {
   padding-top: 10px;
@@ -44,7 +44,7 @@ header{
 }
 
 .image {
-  display: inline-block;
+  display: block;
   vertical-align: top;
   height: 570px;
   width: 675px;
