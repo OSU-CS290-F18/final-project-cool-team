@@ -18,16 +18,27 @@ a {
 }
 
 .content {
-  display: inline;
+  display: inline-block;
 
+}
+
+#images {
+  display: inline-block;
+}
+
+#add-comment {
+  padding-top: 10px;
+}
+
+.image-date {
+  margin-left: 550px;
 }
 
 .image {
   display: inline-block;
   vertical-align: top;
-
-  height: 600px;
-  width: 750px;
+  height: 570px;
+  width: 675px;
   margin: 5px;
   padding: 5px;
   border: .5px;
@@ -45,10 +56,6 @@ a {
 
 .image-info-container {
   width: 100%;
-}
-
-.image-date {
-  margin-right: -5px;
 }
 
 }
