@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset = 'utf-8'>
-    <title>Fotos</title>
+
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
@@ -12,11 +12,17 @@
 
   </head>
 
+  <header>
+  
+	<div class="site-title-container">
+        <img id = "site-title-img" src="fotos.png" alt="fotos">
+      </div>
+  </header>
 
 
   <body>
 
-    <h1 class "site-title"><a href="#">Fotos</a></h1>
+    
 
     <main class="content">
 
@@ -27,18 +33,14 @@
             <a href="post.html"><img src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/europeslostf.jpg" alt="Forest"></a>
             <div class="image-info-container">
               <a href="#" class="image-title">Forest</a>
-              <div class="image-info-container-tags-dates">
-                <span class="image-tags">#forest #nature #outside</span>
+              <p>
+                <span class="image-tags">forest nature outside</span>
                 <span class="image-date">02/10/1999</span>
-              </div>
+              </p>
               <div id="image-comments">
-                Comments:
-                <div class="image-comment">this is cool!</div>
-                <div class="image-comment">wow!</div>
-              </div>
-              <div id="add-comment">
-                <label for="add-comment-input" class="comment-label">Comment</label>
-        				<input type="text" name="add-comment-label" id="add-comment-input" class="comment-label">
+                <p>Comments:</p>
+                <span class="image-comment">this is cool!</span>
+                <span class="image-comment">wow!</span>
               </div>
             </div>
           </div>
@@ -64,10 +66,10 @@
       <aside class="search-container">
 			<a class = "module-title" id="search-title">search</a>
 			<div class="filter-input-container">
-				<label for="filter-text" class="filter-input-label">Name</label>
+				<label for="filter-text" class="filter-input-label">Post Name</label>
 				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
             </div>
-
+			
 			<section id = "tags">
 				 <a id = "tag_title">tags</a>
 				 <div class = "tag">
@@ -78,7 +80,7 @@
 			</section>
 
 			<div class="filter-input-container">
-				<label for="filter-text" class="filter-input-label">Date</label>
+				<label for="filter-text" class="filter-input-label">Date Posted</label>
 				<input type="text" name="filter-text-date" id="filter-text" class="filter-input" placeholder="ex. xx/xx/xxxx">
             </div>
 
@@ -94,7 +96,11 @@
 				<label for="newpost-text" class="filter-input-label">Post Name</label>
 				<input type="text" name="newpost-name" id="newpost-text" class="newpost-input">
             </div>
-			 <a id = "tag_title">tags</a>
+			<div class="newpost-input-container">
+				<label for="newpost-text" class="filter-input-label">img url</label>
+				<input type="text" name="newpost-url" id="newpost-text" class="newpost-input">
+            </div>
+			<a id = "tag_title">tags</a>
 			<section id = "tags">
 				 <div class = "tag">
 					 <input type="checkbox" id="gaming" name="gaming">
