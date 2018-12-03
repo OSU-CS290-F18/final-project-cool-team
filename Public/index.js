@@ -1,5 +1,7 @@
 
 
+var allPosts = [];
+
 document.getElementById('newpost-button').onclick = function(){show_newpost()};
 document.getElementById('cancel-button').onclick = function(){hide_newpost()};
 document.getElementById('add-tag-button').onclick = function(){show_tag_maker()};
@@ -48,19 +50,32 @@ window.onclick = function(event) {
   }
 }
 
-function insertNewFoto(imgURL, description, tag1, tag2, tag3, date, comment1,comment2){
-	var postHTML = Handlebars.template.foto({
+function insertNewFoto(id, imgURL, description, tags, date, comments) {
+	var postHTML = Handlebars.templates.foto({
+		id: id,
 		imgURL: imgURL,
 		description: description,
-		tag1: tag1,
-		tag2: tag2,
-		tag3: tag3,
-		date: date,
-		comment1: comment1,
-		comment2: comment2
-
+		tags: tags,
+		comments: comments,
+		date: date
 	});
 
 	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
+	allPosts.push(postHTML);
 }
+
+var currentDate = new Date();
+var day = currentDate.getDate();
+var month = currentDate.getMonth() + 1;
+var year = currentDate.getFullYear();
+
+var newPost = document.getElementById('post-button');
+newPost.addEventListener('click', insertNewFoto(
+	allPosts.length,
+	document.getElementById('newpost-text-imgURL').value,
+	document.getElementById('newpost-text-name').value,
+	document.getElementById('tags').value,
+	"" + month + "/" + day + "/" + year,
+	[]
+));

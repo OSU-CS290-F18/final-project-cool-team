@@ -1,7 +1,15 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['foto'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+templates['foto'] = template({"1":function(container,depth0,helpers,partials,data) {
+    return "        <span class=\"image-tags\">#\n          "
+    + container.escapeExpression(container.lambda(depth0, depth0))
+    + "\n          </span>\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    return "          <div class=\"image-comment\">"
+    + container.escapeExpression(container.lambda(depth0, depth0))
+    + "</div>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<div class=\"image\">\n  <div class=\"image-contents\">\n    <a href="
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
@@ -11,18 +19,12 @@ templates['foto'] = template({"compiler":[7,">= 4.0.0"],"main":function(containe
     + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
     + "></a>\n    <div class=\"image-info-container\">\n      <a href=\"#\" class=\"image-title\">"
     + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
-    + "</a>\n      <div class=\"image-info-container-tags-dates\">\n        <span class=\"image-tags\">#"
-    + alias4(((helper = (helper = helpers.tag1 || (depth0 != null ? depth0.tag1 : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"tag1","hash":{},"data":data}) : helper)))
-    + " #"
-    + alias4(((helper = (helper = helpers.tag2 || (depth0 != null ? depth0.tag2 : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"tag2","hash":{},"data":data}) : helper)))
-    + " #"
-    + alias4(((helper = (helper = helpers.tag3 || (depth0 != null ? depth0.tag3 : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"tag3","hash":{},"data":data}) : helper)))
-    + "</span>\n        <span class=\"image-date\">"
+    + "</a>\n      <div class=\"image-info-container-tags-dates\">\n"
+    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.tags : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "        <span class=\"image-date\">"
     + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
-    + "</span>\n      </div>\n      <div id=\"image-comments\">\n        Comments:\n        <div class=\"image-comment\">"
-    + alias4(((helper = (helper = helpers.comment1 || (depth0 != null ? depth0.comment1 : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"comment1","hash":{},"data":data}) : helper)))
-    + "</div>\n        <div class=\"image-comment\">"
-    + alias4(((helper = (helper = helpers.comment2 || (depth0 != null ? depth0.comment2 : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"comment2","hash":{},"data":data}) : helper)))
-    + "</div>\n      </div>\n      <div id=\"add-comment\">\n        <label for=\"add-comment-input\" class=\"comment-label\">Comment</label>\n        <input type=\"text\" name=\"add-comment-label\" id=\"add-comment-input\" class=\"comment-label\">\n      </div>\n    </div>\n  </div>\n</div>\n";
+    + "</span>\n      </div>\n      <div id=\"image-comments\">\n        Comments:\n"
+    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.comments : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "      </div>\n      <div id=\"add-comment\">\n        <label for=\"add-comment-input\" class=\"comment-label\">Comment</label>\n        <input type=\"text\" name=\"add-comment-label\" id=\"add-comment-input\" class=\"comment-label\">\n        <button id= \"comment-button\" class=\"action-button\">Comment</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
 },"useData":true});
 })();

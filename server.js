@@ -22,13 +22,11 @@ app.get('/:id', function(req, res, next) {
     var index = findWithAttr(postData, 'id', id);
     if (postData[id]) {
       res.status(200).render('partials/foto', {
+        id: postData[index].id,
         description: postData[index].description,
         imgURL: postData[index].imgURL,
-        tag1: postData[index].tag1,
-        tag2: postData[index].tag2,
-        tag3: postData[index].tag3,
-        comment1: postData[index].comment1,
-        comment2: postData[index].comment2,
+        tags: postData[index].tags,
+        comments: postData[index].comments,
         date: postData[index].date
   	  });
 

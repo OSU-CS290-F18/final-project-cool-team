@@ -3,33 +3,45 @@
     "id": 0,
     "imgURL": "http://web.engr.oregonstate.edu/~hessro/static/media/rob.14df6f20.jpg",
     "description": "Dr Rob Hess",
-    "tag1": "Doctor",
-    "tag2": "Webdev",
-    "tag3": "teacher",
+    "tags": [
+      "Doctor",
+      "Webdev",
+      "teacher"
+    ],
     "date":"7/12/2018",
-    "comment1":"Good Teacher",
-    "comment2":"Good Grades"
+    "comments": [
+      "Good Teacher",
+      "Good Grades"
+    ]
   },
   {
     "id": 1,
     "imgURL": "http://s1.lprs1.fr/images/2016/07/21/5985033_000-was3109677-35b1c082445-original_940x500.jpg",
     "description": "Shrek",
-    "tag1": "Shrek",
-    "tag2": "Ogre",
-    "tag3": "Green",
+    "tags": [
+      "Shrek",
+      "Ogre",
+      "Green"
+    ],
     "date":"12/2/2018",
-    "comment1":"WOW",
-    "comment2":"Its all ogre now!"
+    "comments":[
+      "WOW",
+      "Its all ogre now!"
+    ]
   },
   {
     "id": 2,
     "imgURL": "https://news.nationalgeographic.com/content/dam/news/2018/05/17/you-can-train-your-cat/02-cat-training-NationalGeographic_1484324.ngsversion.1526587209178.adapt.1900.1.jpg",
     "description": "Cat",
-    "tag1": "Cat",
-    "tag2": "Animal",
-    "tag3": "Meow",
+    "tags": [
+      "Cat",
+      "Animal",
+      "Meow"
+    ],
     "date":"5/9/2017",
-    "comment1":"Meow",
-    "comment2":"Much Wow!"
+    "comments": [
+      "Meow",
+      "Much Wow!"
+    ]
   }
 ]

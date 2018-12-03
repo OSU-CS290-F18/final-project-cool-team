@@ -4,13 +4,18 @@
     <div class="image-info-container">
       <a href="#" class="image-title">{{description}}</a>
       <div class="image-info-container-tags-dates">
-        <span class="image-tags">#{{tag1}} #{{tag2}} #{{tag3}}</span>
+        {{#each tags}}
+        <span class="image-tags">#
+          {{this}}
+          </span>
+        {{/each}}
         <span class="image-date">{{date}}</span>
       </div>
       <div id="image-comments">
         Comments:
-        <div class="image-comment">{{comment1}}</div>
-        <div class="image-comment">{{comment2}}</div>
+        {{#each comments}}
+          <div class="image-comment">{{this}}</div>
+        {{/each}}
       </div>
       <div id="add-comment">
         <label for="add-comment-input" class="comment-label">Comment</label>
