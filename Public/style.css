@@ -77,8 +77,6 @@ header{
 
 .image-date {
   font-size: 12px;
-  position: absolute;
-  right: 28.5%;
   margin: 7px;
 }
 .image-info-container-tags-dates{
@@ -107,7 +105,7 @@ text-align:center;
 padding:5px;
 background-color: #cef5e0;
 border-radius: 10px;
-top:30%;
+top:25%;
 right:85%;
 position:fixed;
 }
@@ -172,7 +170,7 @@ border-radius:5px;
 	height:40px;
 	margin-left:20px;
 	position:fixed;
-	top:30%;
+	top:25%;
 	left:85%
 
 }
@@ -199,20 +197,13 @@ border-radius:5px;
 	width:140px;
 	height:25px;
 	border: 1px;
+	margin: auto;
 }
 #post-button:active{
 transform: translateY(1px);
 
 }
-#cancel-button{
-background-color:#45eb90;
-	border-radius:5px;
-	width:50px;
-	height:25px;
-	border: 1px;
-	margin-bottom: 5px;
-	margin-top: 5px;
-}
+#cancel-button{background-color:#45eb90;border-radius:5px;width:50px;height:25px;border: 1px;margin-bottom: 10px;margin-top: 10px;}
 #cancel-button:active{
 transform: translateY(1px);
 
