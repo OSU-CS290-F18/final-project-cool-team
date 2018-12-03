@@ -1,13 +1,13 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['foto'] = template({"1":function(container,depth0,helpers,partials,data) {
-    return "        <span class=\"image-tags\">#\n          "
+    return "        <span class=\"image-tags\">#"
     + container.escapeExpression(container.lambda(depth0, depth0))
-    + "\n          </span>\n";
+    + "</span>\n";
 },"3":function(container,depth0,helpers,partials,data) {
-    return "          <div class=\"image-comment\">"
+    return "          <div class=\"image-comment\"><i>\""
     + container.escapeExpression(container.lambda(depth0, depth0))
-    + "</div>\n";
+    + "\"</i></div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
