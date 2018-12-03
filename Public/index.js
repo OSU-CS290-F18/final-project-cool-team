@@ -59,9 +59,19 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 		date: date,
 		comments: comments
 	});
-
 	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
+	
+}
+
+function insertTags(tags){
+
+	var tagHTML = Handlebars.templates.tag({
+		tags:tags
+	}); 
+	var postContainer = document.getElementById('tags1'); 
+	postContainer.insertAdjacentHTML('beforeend', tagHTML); 
+
 }
 
 var currentDate = new Date();
