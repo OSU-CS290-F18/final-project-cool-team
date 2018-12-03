@@ -69,18 +69,16 @@ var day = currentDate.getDate();
 var month = currentDate.getMonth() + 1;
 var year = currentDate.getFullYear();
 
-var description = document.getElementById('newpost-text-imgURL').value;
-var imgURL = document.getElementById('newpost-text-name').value;
-var tags = document.getElementById('tags').value;
+var description = document.getElementById('newpost-text-imgURL');
+var imgURL = document.getElementById('newpost-text-name');
+var tags = document.getElementById('tags');
 var date = "" + month + "/" + day + "/" + year;
 var comments = [];
 
 
 var newPost = document.getElementById('post-button');
 newPost.addEventListener('click', function() {
-	if (description == null || imgURL == null) {
-		alert("You must enter the description and url fields to make a post");
-	} else {
+	if (description && description.value && imgURL && imgURL.value) {
 		insertNewFoto(
 			3 + allPosts.length,
 			document.getElementById('newpost-text-imgURL').value,
@@ -89,6 +87,11 @@ newPost.addEventListener('click', function() {
 			"" + month + "/" + day + "/" + year,
 			[]
 		);
+		document.getElementById('newpost-text-name').value = "";
+		document.getElementById('newpost-text-imgURL').value = "";
+		//uncheck tags
+	} else {
+		alert("You must enter the description and url fields to make a post");
 	}
 
 allPosts.push({
@@ -106,5 +109,10 @@ var commentContainer = document.getElementById('image-comments');
 var commentInput = document.getElementById('add-comment-input');
 var commentButton = document.getElementById('comment-button');
 commentButton.addEventListener('click', function() {
-	commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment><i> ' + commentInput + '</i></div>');
+	if (commentInput && commentInput.value) {
+		commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
+		document.getElementById('add-comment-input').value = "";
+	} else {
+		alert("You must enter a comment before adding one!")
+	}
 });
