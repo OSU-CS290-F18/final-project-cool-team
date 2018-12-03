@@ -95,10 +95,10 @@ header{
 
 .filter-input{
 	width:120px;
-
+	margin:5px;
 }
 
-.search-container{display:block;margin:20px;border: 1px;width: 150px;height: 310px;text-align:center;padding:5px;background-color: #cef5e0;border-radius: 10px;top:25%;right:85%;position:fixed;box-shadow: 0px 0px 20px 8px #ffffff85;}
+.search-container{display:block;margin:20px;border: 1px;width: 150px;height: 220px;text-align:center;padding:5px;background-color: #cef5e0;border-radius: 10px;top:25%;right:85%;position:fixed;box-shadow: 0px 0px 20px 8px #ffffff85;}
 .tag{
   overflow: auto;
   width:100px;
