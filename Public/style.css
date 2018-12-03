@@ -88,7 +88,7 @@ header{
 .image-title{
   font-size: 23px;
   color: #436d56;
-  font-weight: 900; 
+  font-weight: 900;
 }
 
 
@@ -111,7 +111,14 @@ top:25%;
 right:85%;
 position:fixed;
 }
-.tag{overflow: auto;width:100px;height:100px;margin:auto;border-left: 1px solid #c4e2d2;border-right: 1px solid #c4e2d2;}
+.tag{
+  overflow: auto;
+  width:100px;
+  height:30px;
+  margin:auto;
+  border-left: 1px solid #c4e2d2
+  ;border-right: 1px solid #c4e2d2;
+}
 .filter-input-container{
 	margin-top: 5px;
 	margin-bottom: 5px;
