@@ -25,6 +25,6 @@ templates['foto'] = template({"1":function(container,depth0,helpers,partials,dat
     + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
     + "</span>\r\n      </div>\r\n      <div id=\"image-comments\">\r\n        Comments:\r\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.comments : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "      </div>\r\n      <div id=\"add-comment\">\r\n        <label for=\"add-comment-input\" class=\"comment-label\">Comment</label>\r\n        <input type=\"text\" name=\"add-comment-label\" id=\"add-comment-input\" class=\"comment-label\">\r\n        <button id= \"comment-button\" class=\"action-button\">Comment</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
+    + "      </div>\r\n      <div id=\"add-comment\">\r\n        <input type=\"text\" name=\"add-comment-label\" id=\"add-comment-input\" class=\"comment-label\">\r\n        <button id= \"comment-button\" class=\"action-button\">Comment</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 },"useData":true});
 })();
