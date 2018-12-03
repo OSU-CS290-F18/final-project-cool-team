@@ -43,8 +43,9 @@ header{
 .image {
   display: block;
   vertical-align: top;
-  height: 600px;
-  width: 750px;
+  height: 475px;
+  height: auto;
+  width: 575px;
   margin-left:auto;
   margin-right:auto;
   padding: 5px;
@@ -63,6 +64,7 @@ header{
 
 .image-info-container {
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .image-date {
