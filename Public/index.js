@@ -95,3 +95,12 @@ allPosts.push({
 	comments: comments
 
 });
+
+var commentContainer = document.getElementById('image-comments');
+var commentInput = document.getElementById('add-comment-input');
+var commentButton = document.getElementById('comment-button');
+commentButton.addEventListener('click', function() {
+
+	commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment><i> ' + commentInput + '</i></div>');
+
+})
