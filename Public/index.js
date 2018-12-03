@@ -6,7 +6,7 @@ document.getElementById('newpost-button').onclick = function(){show_newpost()};
 document.getElementById('cancel-button').onclick = function(){hide_newpost()};
 document.getElementById('add-tag-button').onclick = function(){show_tag_maker()};
 document.getElementById('cancel-newtag-button').onclick = function(){hide_tag_maker()};
-document.getElementById('filter-update-button').onclick = function(){Search()};
+
 function show_newpost(){
 	document.getElementById('newpost-button').style.visibility = 'hidden';
 	document.getElementById('newpost-container').style.visibility = 'visible';
@@ -81,14 +81,15 @@ var year = currentDate.getFullYear();
 
 
 var tagsArray = [];
-// var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
-//
-// for (var i = 0; i < checkboxes.length; i++) {
-// 	if (checkboxes[i].type == 'checkbox' && checkboxes[i].checked == true) {
-// 		console.log("====----" + checkboxes[i]);
-// 		tagsArray.push(checkboxes[i].name);
-// 	}
-// }
+var checkboxes = document.getElementById("tags");
+console.log(checkboxes.length);
+
+for (var i = 0; i < checkboxes.length; i++) {
+	if (checkboxes[i].type == 'checkbox' && checkboxes[i].checked == true) {
+		console.log("====----" + checkboxes[i]);
+		tagsArray.push(checkboxes[i].value);
+	}
+}
 console.log("=====" + tagsArray);
 
 var description = document.getElementById('newpost-text-imgURL');
@@ -99,14 +100,6 @@ var comments = [];
 
 var newPost = document.getElementById('post-button');
 newPost.addEventListener('click', function() {
-	var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
-
-	for (var i = 0; i < checkboxes.length; i++) {
-		if (checkboxes[i].type == 'checkbox' && checkboxes[i].checked == true) {
-			console.log("====----" + checkboxes[i]);
-			tagsArray.push(checkboxes[i].name);
-		}
-	}
 	if (description && description.value && imgURL && imgURL.value) {
 		insertNewFoto(
 			3 + allPosts.length,
@@ -118,10 +111,6 @@ newPost.addEventListener('click', function() {
 		);
 		document.getElementById('newpost-text-name').value = "";
 		document.getElementById('newpost-text-imgURL').value = "";
-		tagsArray = [];
-		for (var i = 0; i < checkboxes.length; i++) {
-			checkboxes[i].checked = false;
-		}
 		//uncheck tags
 
 	} else {
@@ -150,22 +139,3 @@ commentButton.addEventListener('click', function() {
 		alert("You must enter a comment before adding one!")
 	}
 });
-
-function Search(){ 
-	var images = document.getElementById('images').children; 
-	for(var i = 0; i < images.length; i++){
-		var test = true; 
-		var title = images[i].getElementById('image-title').innerHTML.toUpperCase();
-		console.log(title);
-		if(document.getElementById('filter-text') != ''){
-			if(document.getElementById('filter-city').value.toUpperCase() !== title.toUpperCase()){
-				test = false; 
-		
-			}
-		}
-	
-		if(test = false){
-			posts[i].display = 'none';
-		}
-	}
-}
