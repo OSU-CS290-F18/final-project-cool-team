@@ -49,19 +49,18 @@ window.onclick = function(event) {
 }
 
 function insertNewFoto(imgURL, description, tag1, tag2, tag3, date, comment1,comment2){
-	var fotoinfo = {
-		imgURL:imgURL,
-		description:description, 
-		tag1:tag1,
-		tag2:tag2,
-		tag3:tag3,
-		date:date,
-		comment1:comment1,
-		comment2:comment2
-	}
-	var postHTML = Handlebars.templates.foto(fotoinfo); 
-	var postContainer = document.getElementById('image');
+	var postHTML = Handlebars.template.foto({
+		imgURL: imgURL,
+		description: description,
+		tag1: tag1,
+		tag2: tag2,
+		tag3: tag3,
+		date: date,
+		comment1: comment1,
+		comment2: comment2
+
+	});
+
+	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
 }
-	
-	

@@ -13,8 +13,8 @@ app.use(express.static('public'));
 app.get('/', function(req, res, next) {
     res.status(200).render('home',{
 		posts: postData
-		
-	}); 
+
+	});
 });
 
 app.get('*', function (req, res, next) {
@@ -27,7 +27,3 @@ app.listen(port, function (err) {
     }
   console.log("== Server is listening on port", port);
 });
-
-
-
-
