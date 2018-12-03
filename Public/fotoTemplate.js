@@ -25,6 +25,6 @@ templates['foto'] = template({"1":function(container,depth0,helpers,partials,dat
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.tags : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "      </div>\n      <div id=\"image-comments\">\n        Comments:\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.comments : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "      </div>\n      <div id=\"add-comment\">\n        <label for=\"add-comment-input\" class=\"comment-label\">Comment</label>\n        <input type=\"text\" name=\"add-comment-label\" id=\"add-comment-input\" class=\"comment-label\">\n        <button id= \"comment-button\" class=\"action-button\">Comment</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
+    + "      </div>\r\n      <div id=\"add-comment\">\r\n        <input type=\"text\" name=\"add-comment-label\" id=\"add-comment-input\" class=\"comment-label\">\r\n        <button id= \"comment-button\" class=\"action-button\">Comment</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 },"useData":true});
 })();

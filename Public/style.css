@@ -17,6 +17,16 @@ header{
 	border-bottom: 1px solid black;
 
 }
+h2{
+  font-size: 72px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 0px;
+}
 
 #site-title-img{
 	width:150px;
@@ -101,13 +111,7 @@ top:30%;
 right:85%;
 position:fixed;
 }
-.tag{
-overflow: scroll;
-width:100px;
- height:100px;
- margin:auto;
- border:1px solid black;
-}
+.tag{overflow: auto;width:100px;height:100px;margin:auto;border-left: 1px solid #c4e2d2;border-right: 1px solid #c4e2d2;}
 .filter-input-container{
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -122,6 +126,11 @@ width:100px;
 	width:140px;
 	height:25px;
 	border: 1px ;
+}
+#add-comment-input{
+	width: 530px;
+	margin-bottom: 5px;
+	background-color: #e9f7ef;
 }
 
 #comment-button {
@@ -223,6 +232,24 @@ background-color:#45eb90;
 transform: translateY(1px);
 
 }
+#newtag-button{
+  background-color:#45eb90;
+  border-radius:5px;
+  /* width:80px; */
+  height:20px;
+  height: 25px;
+  border: 1px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+#cancel-newtag-button{
+  background-color:#45eb90;
+  border-radius:5px;
+  height: 25px;
+  border: 1px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
 
 
 .filter-button {
@@ -276,3 +303,10 @@ transform: translateY(1px);
 }
 
 .show {display: block;
+}
+input[type=text] {
+  background-color: #ffffff;
+  border-style:none;
+  height: 18px;
+  border-radius: 5px;
+}
