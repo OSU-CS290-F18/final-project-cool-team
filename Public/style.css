@@ -46,8 +46,7 @@ header{
   margin-left:auto;
   margin-right:auto;
   padding: 5px;
-  border: .5px;
-  border-style: groove;
+  border-style: outset;
   border-radius: 6px;
 
 }
