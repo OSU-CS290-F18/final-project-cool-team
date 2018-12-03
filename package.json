@@ -8,7 +8,8 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "handlebars views/partials/foto.handlebars -f public/fotoTemplate.js",
-    "prestart": "npm run build"
+    "build": "handlebars views/partials/tag.handlebars -f public/tagTemplate.js", 
+	"prestart": "npm run build"
   },
   "repository": {
     "type": "git",
