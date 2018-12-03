@@ -56,13 +56,12 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 		imgURL: imgURL,
 		description: description,
 		tags: tags,
-		comments: comments,
-		date: date
+		date: date,
+		comments: comments
 	});
 
 	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
-	allPosts.push(postHTML);
 }
 
 var currentDate = new Date();
@@ -70,12 +69,29 @@ var day = currentDate.getDate();
 var month = currentDate.getMonth() + 1;
 var year = currentDate.getFullYear();
 
+var description = document.getElementById('newpost-text-imgURL').value;
+var imgURL = document.getElementById('newpost-text-name').value;
+var tags = document.getElementById('tags').value;
+var date = "" + month + "/" + day + "/" + year;
+var comments = [];
+
+
 var newPost = document.getElementById('post-button');
 newPost.addEventListener('click', insertNewFoto(
-	allPosts.length,
-	document.getElementById('newpost-text-imgURL').value,
-	document.getElementById('newpost-text-name').value,
-	document.getElementById('tags').value,
-	"" + month + "/" + day + "/" + year,
-	[]
+	3 + allPosts.length,
+	imgURL,
+	description,
+	tags,
+	date,
+	comments
 ));
+
+allPosts.push({
+	id: 3 + allPosts.length,
+	description: description,
+	imgURL: imgURL,
+	tags: tags,
+	date: date,
+	comments: comments
+
+});
