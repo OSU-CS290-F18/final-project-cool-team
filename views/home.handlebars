@@ -9,7 +9,7 @@
 
   			<section id = "tags">
   				 {{#each tags}}
-					{{< tag}}
+					{{> tag}}
 				 {{/each}}
   			</section>
 
@@ -57,7 +57,7 @@
 
 			<section id = "tags">
 				  {{#each tags}}
-					{{< tag}}
+					{{> tag}}
 				 {{/each}}
 			</section>
 
@@ -84,12 +84,9 @@
             </div>
 			<a id = "tag_title">tags</a>
 			<section id = "tags">
-				 <div class = "tag">
-					 <input type="checkbox" id="gaming" name="gaming">
-					 <label for="gaming">Star Wars</label>
-					 <button id= "add-tag-button" class="action-button">new tag</button>
-				 </div>
-
+				{{#each tags}}
+					{{> tag}}
+				 {{/each}}
 			</section>
 
 			<button id= "cancel-button" class="action-button">cancel</button>

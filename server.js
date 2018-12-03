@@ -13,8 +13,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', function(req, res, next) {
-    res.status(200).render('home', OURPAGEDATA);
-    console.log("==home");
+    res.status(200).render('home'); 
 });
 
 app.get('*', function (req, res, next) {
