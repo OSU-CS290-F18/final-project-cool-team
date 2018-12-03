@@ -6,7 +6,7 @@ document.getElementById('newpost-button').onclick = function(){show_newpost()};
 document.getElementById('cancel-button').onclick = function(){hide_newpost()};
 document.getElementById('add-tag-button').onclick = function(){show_tag_maker()};
 document.getElementById('cancel-newtag-button').onclick = function(){hide_tag_maker()};
-
+document.getElementById('filter-update-button').onclick = function(){Search()};
 function show_newpost(){
 	document.getElementById('newpost-button').style.visibility = 'hidden';
 	document.getElementById('newpost-container').style.visibility = 'visible';
@@ -126,3 +126,22 @@ commentButton.addEventListener('click', function() {
 		alert("You must enter a comment before adding one!")
 	}
 });
+
+function Search(){ 
+	var images = document.getElementById('images').children; 
+	for(var i = 0; i < images.length; i++){
+		var test = true; 
+		var title = images[i].getElementById('image-title').innerHTML.toUpperCase();
+		console.log(title);
+		if(document.getElementById('filter-text') != ''){
+			if(document.getElementById('filter-city').value.toUpperCase() !== title.toUpperCase()){
+				test = false; 
+		
+			}
+		}
+	
+		if(test = false){
+			posts[i].display = 'none';
+		}
+	}
+}
