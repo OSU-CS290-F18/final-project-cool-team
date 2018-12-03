@@ -69,6 +69,15 @@ var day = currentDate.getDate();
 var month = currentDate.getMonth() + 1;
 var year = currentDate.getFullYear();
 
+
+var tagsArray = [];
+var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+
+for (var i = 0; i < checkboxes.length; i++) {
+	tagsArray.push(checkboxes[i].value);
+}
+console.log("=====" + tagsArray);
+
 var description = document.getElementById('newpost-text-imgURL');
 var imgURL = document.getElementById('newpost-text-name');
 var tags = document.getElementById('tags');
@@ -83,7 +92,7 @@ newPost.addEventListener('click', function() {
 			3 + allPosts.length,
 			document.getElementById('newpost-text-imgURL').value,
 			document.getElementById('newpost-text-name').value,
-			document.getElementById('tags').value,
+			tagsArray,
 			"" + month + "/" + day + "/" + year,
 			[]
 		);
@@ -94,14 +103,14 @@ newPost.addEventListener('click', function() {
 		alert("You must enter the description and url fields to make a post");
 	}
 
-allPosts.push({
-	id: 3 + allPosts.length,
-	description: description,
-	imgURL: imgURL,
-	tags: tags,
-	date: date,
-	comments: comments
-});
+	allPosts.push({
+		id: 3 + allPosts.length,
+		description: description,
+		imgURL: imgURL,
+		tags: tagsArray,
+		date: date,
+		comments: comments
+	});
 
 });
 
