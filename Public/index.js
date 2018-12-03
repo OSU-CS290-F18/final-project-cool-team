@@ -81,7 +81,7 @@ var year = currentDate.getFullYear();
 
 
 var tagsArray = [];
-var checkboxes = document.getElementById("tags");
+var checkboxes = document.getElementsByClassName("tag");
 console.log(checkboxes.length);
 
 for (var i = 0; i < checkboxes.length; i++) {
