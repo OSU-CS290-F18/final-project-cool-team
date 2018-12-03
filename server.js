@@ -22,8 +22,8 @@ app.use(express.static('public'));
 
 app.get('/', function(req, res, next) {
     res.status(200).render('home',{
-		posts: postData
-
+		posts: postData,
+    tags: postData[0].tags
 	});
 });
 

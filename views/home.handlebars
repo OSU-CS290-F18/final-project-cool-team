@@ -59,13 +59,15 @@
 				<input type="text" name="newpost-url" id="newpost-text-imgURL" class="newpost-input">
             </div>
 			<a id= "tag_title">tags</a>
-			<section id= "tags">
-				<div class = "tag">
-  					 <input type="checkbox" id="cat" name="cat">
-  					 <label for="gaming">Cats</label>
+			<section id= "tags" class=>
+          {{#each tags}}
+          <div class = "tag">
+            <input type="checkbox" id={{this}} name={{this}}>
+            <label for={{this}}>{{this}}</label>
+          </div>
+          {{/each}}
 
-  				 </div>
-				 <button id= "add-tag-button" class="action-button">New tag</button>
+			    <button id= "add-tag-button" class="action-button">New tag</button>
 			</section>
 
 			<button id= "cancel-button" class="action-button">cancel</button>

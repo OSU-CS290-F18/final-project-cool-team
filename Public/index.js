@@ -61,57 +61,81 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 	});
 	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
-	
-}
-
-function insertTags(tags){
-
-	var tagHTML = Handlebars.templates.tag({
-		tags:tags
-	}); 
-	var postContainer = document.getElementById('tags1'); 
-	postContainer.insertAdjacentHTML('beforeend', tagHTML); 
 
 }
+
+// function insertTags(tags){
+//
+// 	var tagHTML = Handlebars.templates.tag({
+// 		tags: tags
+// 	});
+// 	var tagsContainer = document.getElementById('tags');
+// 	tagsContainer.insertAdjacentHTML('beforeend', tagHTML);
+//
+// }
 
 var currentDate = new Date();
 var day = currentDate.getDate();
 var month = currentDate.getMonth() + 1;
 var year = currentDate.getFullYear();
 
+
+var tagsArray = [];
+// var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+//
+// for (var i = 0; i < checkboxes.length; i++) {
+// 	if (checkboxes[i].type == 'checkbox' && checkboxes[i].checked == true) {
+// 		console.log("====----" + checkboxes[i]);
+// 		tagsArray.push(checkboxes[i].name);
+// 	}
+// }
+console.log("=====" + tagsArray);
+
 var description = document.getElementById('newpost-text-imgURL');
 var imgURL = document.getElementById('newpost-text-name');
-var tags = document.getElementById('tags');
 var date = "" + month + "/" + day + "/" + year;
 var comments = [];
 
 
 var newPost = document.getElementById('post-button');
 newPost.addEventListener('click', function() {
+	var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+
+	for (var i = 0; i < checkboxes.length; i++) {
+		if (checkboxes[i].type == 'checkbox' && checkboxes[i].checked == true) {
+			console.log("====----" + checkboxes[i]);
+			tagsArray.push(checkboxes[i].name);
+		}
+	}
 	if (description && description.value && imgURL && imgURL.value) {
 		insertNewFoto(
 			3 + allPosts.length,
 			document.getElementById('newpost-text-imgURL').value,
 			document.getElementById('newpost-text-name').value,
-			document.getElementById('tags').value,
+			tagsArray,
 			"" + month + "/" + day + "/" + year,
 			[]
 		);
 		document.getElementById('newpost-text-name').value = "";
 		document.getElementById('newpost-text-imgURL').value = "";
+		tagsArray = [];
+		for (var i = 0; i < checkboxes.length; i++) {
+			checkboxes[i].checked = false;
+		}
 		//uncheck tags
+
 	} else {
 		alert("You must enter the description and url fields to make a post");
 	}
 
-allPosts.push({
-	id: 3 + allPosts.length,
-	description: description,
-	imgURL: imgURL,
-	tags: tags,
-	date: date,
-	comments: comments
-});
+	allPosts.push({
+		id: 3 + allPosts.length,
+		description: description,
+		imgURL: imgURL,
+		tags: tagsArray,
+		date: date,
+		comments: comments
+	});
 
 });
 
