@@ -1,26 +1,4 @@
 <main class="content">
-
-      <div class="search-container">
-  			<a class = "module-title" id="search-title">search</a>
-  			<div class="filter-input-container">
-  				<label for="filter-text" class="filter-input-label">Post Name</label>
-  				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
-              </div>
-
-  			<section id = "tags">
-  				 {{#each tags}}
-					{{> tag}}
-				 {{/each}}
-  			</section>
-
-  			<div class="filter-input-container">
-  				<label for="filter-text" class="filter-input-label">Date Posted</label>
-  				<input type="text" name="filter-text-date" id="filter-text" class="filter-input" placeholder="ex. xx/xx/xxxx">
-              </div>
-
-			<button id="filter-update-button" class="action-button">Update</button>
-		</div>
-
       <section id="images">
 
         <div class="image">
@@ -56,9 +34,9 @@
             </div>
 
 			<section id = "tags">
-				  {{#each tags}}
-					{{> tag}}
-				 {{/each}}
+				  <div class = "tag">
+  					 <input type="checkbox" id="cat" name="cat">
+  					 <label for="gaming">Cats</label>
 			</section>
 
 			<div class="filter-input-container">
@@ -84,9 +62,11 @@
             </div>
 			<a id = "tag_title">tags</a>
 			<section id = "tags">
-				{{#each tags}}
-					{{> tag}}
-				 {{/each}}
+				<div class = "tag">
+  					 <input type="checkbox" id="cat" name="cat">
+  					 <label for="gaming">Cats</label>
+
+  				 </div>
 			</section>
 
 			<button id= "cancel-button" class="action-button">cancel</button>
