@@ -35,12 +35,9 @@ header{
   display: inline;
 }
 
-#images{
-	width: 650 px;
-
-
-}
 .image {
+  margin: 5px;
+  background-color: #b9ff91;
   display: block;
   vertical-align: top;
   height: 475px;
@@ -63,12 +60,16 @@ header{
 
 
 .image-info-container {
-  width: 100%;
-  margin-bottom: 40px;
+  width: auto;
+  border-radius: 6px;
+  border-color: GreenYellow;
+  border-style: outset;
+  margin: 10px;
 }
 
 .image-date {
-  margin-right: -5px;
+  margin-left: 200px;
+  font-size: 12px;
 }
 
 
@@ -251,6 +252,12 @@ transform: translateY(1px);
 .filter a:hover {
   background-color: #288b55;
   color: rgb(255, 255, 255);
+}
+
+.site-title-container {
+  display: inline;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .show {display: block;}
