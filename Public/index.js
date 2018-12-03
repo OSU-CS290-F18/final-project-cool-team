@@ -77,14 +77,19 @@ var comments = [];
 
 
 var newPost = document.getElementById('post-button');
-newPost.addEventListener('click', insertNewFoto(
-	3 + allPosts.length,
-	imgURL,
-	description,
-	tags,
-	date,
-	comments
-));
+newPost.addEventListener('click', function() {
+	if (description == null || imgURL == null) {
+		alert("You must enter the description and url fields to make a post");
+	} else {
+		insertNewFoto(
+			3 + allPosts.length,
+			document.getElementById('newpost-text-imgURL').value,
+			document.getElementById('newpost-text-name').value,
+			document.getElementById('tags').value,
+			"" + month + "/" + day + "/" + year,
+			[]
+		);
+	}
 
 allPosts.push({
 	id: 3 + allPosts.length,
@@ -93,6 +98,7 @@ allPosts.push({
 	tags: tags,
 	date: date,
 	comments: comments
+});
 
 });
 
@@ -100,7 +106,5 @@ var commentContainer = document.getElementById('image-comments');
 var commentInput = document.getElementById('add-comment-input');
 var commentButton = document.getElementById('comment-button');
 commentButton.addEventListener('click', function() {
-
 	commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment><i> ' + commentInput + '</i></div>');
-
-})
+});
