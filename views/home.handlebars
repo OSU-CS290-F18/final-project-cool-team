@@ -22,10 +22,13 @@
 				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
             </div>
 
-			<section id = "tags-left">
-				  <div class = "tag">
-  					 <input type="checkbox" id="cat" name="cat">
-  					 <label for="gaming">Cat</label>
+			<section id= "tags-left">
+        {{#each tags}}
+        <div class = "tag">
+          <input type="checkbox" id={{this}} name={{this}}>
+          <label for={{this}}>{{this}}</label>
+        </div>
+        {{/each}}
 			</section>
 
 			<div class="filter-input-container">

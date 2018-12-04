@@ -2,24 +2,24 @@ var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
-var MongoClient = require('mongodb').MongoClient; 
-var bodyParser = require('body-parser'); 
+var MongoClient = require('mongodb').MongoClient;
+var bodyParser = require('body-parser');
 postData = require('./postData');
 var port= process.env.PORT || 3000;
 var url = "mongodb://sam:6a32Bc91@foto-shard-00-00-cjfic.mongodb.net:27017,foto-shard-00-01-cjfic.mongodb.net:27017,foto-shard-00-02-cjfic.mongodb.net:27017/test?ssl=true&replicaSet=foto-shard-0&authSource=admin&retryWrites=true"
-var db; 
-var photos; 
+var db;
+var photos;
 MongoClient.connect(url, function(err, client){
 	if(err){
-		throw err; 
+		throw err;
 	}
 	console.log("mongodb is connected");
 	db = client.db('test');
-	photos = db.collection('foto'); 
+	photos = db.collection('foto');
 });
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
@@ -30,14 +30,23 @@ app.use(express.static('public'));
 	});
 });*/
 
+var arrayOfTags = [];
+
+
 app.get('/', function(req, res, next) {
 	 photos.find({}).toArray(function (err, docs) {
 		if (err) {
 		res.status(500).send("cannot connect to DB.");
 		}
+
+		for (var i = 0; i < docs.length; i++) {
+			for (var j = 0; j < docs[i].tags.length; j++) {
+				arrayOfTags.push(docs[i].tags[j]);
+			}
+		}
 		res.status(200).render('home', {
 		posts: docs,
-		tags: docs.tags
+		tags: arrayOfTags
 		});
 	});
 });
@@ -51,9 +60,9 @@ app.post('/addpost', function(req,res,next){
 			tags: req.body.tags,
 			date: req.body.date,
 			comments: req.body.comments
-			
-			
-			
+
+
+
 		});
 	};
 });
@@ -61,12 +70,12 @@ app.post('/addpost', function(req,res,next){
 app.post('/addcomment', function(req,res,next){
 	console.log(req.body.id);
 	console.log(req.body.comment);
-	var i = parseInt(req.body.id); 
+	var i = parseInt(req.body.id);
 	if(req.body && req.body.comment){
 		console.log('here');
 		photos.updateOne(
-			{ id : i}, 
-			{ $push: { comments: req.body.comment}}		
+			{ id : i},
+			{ $push: { comments: req.body.comment}}
 		);
 	};
 });
@@ -88,7 +97,7 @@ app.post('/addcomment', function(req,res,next){
 		} 	else {
 			next();
 		}
-	}); 
+	});
 });*/
 
 app.get('*', function (req, res, next) {
