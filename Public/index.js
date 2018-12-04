@@ -192,6 +192,7 @@ function Search(){
 		console.log('here2');
 		var test = true;
 		var title = posts[i].querySelector('.image-title').innerHTML.toUpperCase();
+		var date = posts[i].querySelector('.image-date').innerHTML; 
 		console.log(title);
 		if(document.getElementById('filter-text').value != ''){
 			if(document.getElementById('filter-text').value.toUpperCase() !== title.toUpperCase()){
@@ -199,7 +200,11 @@ function Search(){
 
 			}
 		}
-
+		if(document.getElementById('filter-date').value != ''){
+			if(document.getElementById('filter-date').value != date){
+				test = false; 	
+			}
+		}
 		if(test === false){
 			posts[i].style.display = 'none';
 		}
