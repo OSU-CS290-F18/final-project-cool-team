@@ -59,13 +59,9 @@ header{
 }
 
 .image-contents img {
-  height: 100%;
-  width: 100%;
-  max-height: 300px;
-  max-width: 600px;
-  object-fit: cover;
-  align-items: center;
-  border-radius: 10px
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 
@@ -99,7 +95,7 @@ header{
 	margin:5px;
 }
 
-.search-container{display:block;margin:20px;border: 1px;width: 150px;height: 220px;text-align:center;padding:5px;background-color: #cef5e0;border-radius: 10px;top:25%;right:85%;position:fixed;box-shadow: 0px 0px 20px 8px #ffffff85;}
+.search-container{display:block;margin:20px;border: 1px;width: 150px;height: 220px;text-align:center;padding:5px;background-color: #cef5e0;border-radius: 10px;top:25%;right:85%;position:fixed;box-shadow: 0px 0px 20px 8px #ffffff85;} 
 .post-tags{
   overflow: auto;
   width:100px;
@@ -267,7 +263,7 @@ color:white;
 .filter {
  position: absolute;
   display: inline-block;
-  top:13.40%;
+  top:14.2%;
   left:80%;
 }
 
