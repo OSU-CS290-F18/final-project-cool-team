@@ -12,7 +12,11 @@ MongoClient.connect(url, function(err, client){
 		throw err; 
 	}
 	console.log("mongodb is connected");
-	var db = client.db('foto'); 
+	var db = client.db('test');
+	var photos = db.collection('foto'); 
+	photos.find().toArray(function(err, docs){
+		console.log(docs) 
+	});
 });
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
