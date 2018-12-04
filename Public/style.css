@@ -100,14 +100,22 @@ img {
 	margin:5px;
 }
 
-.search-container{display:block;margin:20px;border: 1px;width: 150px;height: 220px;text-align:center;padding:5px;background-color: #cef5e0;border-radius: 10px;top: 30%;right:85%;position:fixed;box-shadow: 0px 0px 20px 8px #ffffff85;} 
-.post-tags{
+.search-container{display:block;margin:20px;border: 1px;width: 150px;height: 275px;text-align:center;padding:5px;background-color: #cef5e0;border-radius: 10px;top: 30%;right:85%;position:fixed;box-shadow: 0px 0px 20px 8px #ffffff85;} 
+#tags-right{
   overflow: auto;
   width:100px;
   height:90px;
   margin:auto;
-  border-left: 1px solid #c4e2d2
-  ;border-right: 1px solid #c4e2d2;
+  border-left: 1px solid #c4e2d2;
+  border-right: 1px solid #c4e2d2;
+}
+#tags-left{
+  overflow: auto;
+  width:100px;
+  height:90px;
+  margin:auto;
+  border-left: 1px solid #c4e2d2;
+  border-right: 1px solid #c4e2d2;
 }
 .filter-input-container{
 	margin-top: 5px;
