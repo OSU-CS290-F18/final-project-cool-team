@@ -65,11 +65,25 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
 	
-	
 	var Request = new XMLHttpRequest(); 
 	Request.open('POST', '/add'); 
 	Request.send(postHTML); 
-
+	var postRequest = new XMLHttpRequest(); 
+	var requestURL = '/addpost'; 
+	postRequest.open('POST', requestURL); 
+	console.log(id); 
+	var requestBody = JSON.stringify({
+		id: id,
+		imgURL: imgURL,
+		description: description,
+		tags: tags,
+		date: date,
+		comments: comments
+	});
+	postRequest.setRequestHeader('Content-Type', 'application/json');
+	postRequest.send(requestBody); 
+	
+	
 }
 
 // function insertTags(tags){
@@ -137,7 +151,7 @@ newPost.addEventListener('click', function() {
 	}
 
 	allPosts.push({
-		id: 3 + allPosts.length,
+		id: 2 + allPosts.length,
 		description: description,
 		imgURL: imgURL,
 		tags: tagsArray,
