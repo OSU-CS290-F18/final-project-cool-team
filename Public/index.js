@@ -157,7 +157,7 @@ image.forEach(function(singleImage) {
 				commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
 				commentInput.value = "";
 			} else {
-				//alert("You must enter a comment before adding one!");
+				//alert("");
 			}
 
 
@@ -167,23 +167,6 @@ image.forEach(function(singleImage) {
 	});
 });
 
-//image.addEventListener('click', function() {
-	//var commentContainer = image.firstChild.nextSibling;
-	//console.log("clicked");
-//});
-
-
-// var commentContainer = document.getElementById('image-comments');
-// var commentInput = document.getElementById('add-comment-input');
-// var commentButton = document.getElementById('comment-button');
-// commentButton.addEventListener('click', function() {
-// 	if (commentInput && commentInput.value) {
-// 		commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
-// 		document.getElementById('add-comment-input').value = "";
-// 	} else {
-// 		alert("You must enter a comment before adding one!")
-// 	}
-// });
 
 function Search(){
 	var posts = document.getElementById('images').children;
@@ -199,7 +182,7 @@ function Search(){
 				tag.push(tag_val);
 		}
 	}
-
+	var stringsOfTagsInPosts = "";
 	for(var i = 0; i < posts.length; i++){
 		var test = true;
 		var title = posts[i].querySelector('.image-title').innerHTML.toUpperCase();
@@ -217,9 +200,18 @@ function Search(){
 				test = false;
 			}
 		}
-		if (!isSubsetOf(posts[i].querySelector('.image-tags').innerHTML, tag)) {
-			test = false;
+		var stringsOfTagsInPosts = "";
+		var tagsOfPost = posts[i].querySelector('#image-tags');
+		console.log(tagsOfPost);
+		console.log(tagsOfPost.children.length);
+		for (var j = 0; j < tagsOfPost.children.length; j++) {
+			stringsOfTagsInPosts += tagsOfPost.children[j].innerHTML;
 		}
+
+
+		if (!isSubsetOf(stringsOfTagsInPosts, tag)) {
+		 	test = false;
+		 }
 
 		if(test === false) {
 			posts[i].style.display = 'none';
@@ -231,12 +223,12 @@ function Search(){
 }
 
 function isSubsetOf(string, arr) {
-		console.log(arr);
-    if (arr.indexOf(string) == -1) {
-        return false;
-    } else {
-				return true
+		for (var i = 0; i < arr.length; i++) {
+			if (string.indexOf(arr[i].toLowerCase()) != -1) {
+				return true;
+			}
 		}
+		return false;
 }
 
 
