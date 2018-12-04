@@ -32,10 +32,12 @@
             </div>
 
 			<section id="tags-left" class='post-tags'>
-				  <div class = "tag">
-  					 <input type="checkbox" id="cat" name="cat">
-  					 <label for="gaming">Cat</label>
-          </div>
+        {{#each tags}}
+        <div class = "tag">
+          <input type="checkbox" id={{this}} name={{this}}>
+          <label for={{this}}>{{this}}</label>
+        </div>
+        {{/each}}
 			</section>
 
 			<div class="filter-input-container">
