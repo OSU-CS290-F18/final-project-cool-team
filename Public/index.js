@@ -64,14 +64,14 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 	});
 	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
-	
-	var Request = new XMLHttpRequest(); 
-	Request.open('POST', '/add'); 
-	Request.send(postHTML); 
-	var postRequest = new XMLHttpRequest(); 
-	var requestURL = '/addpost'; 
-	postRequest.open('POST', requestURL); 
-	console.log(id); 
+
+	var Request = new XMLHttpRequest();
+	Request.open('POST', '/add');
+	Request.send(postHTML);
+	var postRequest = new XMLHttpRequest();
+	var requestURL = '/addpost';
+	postRequest.open('POST', requestURL);
+	console.log(id);
 	var requestBody = JSON.stringify({
 		id: id,
 		imgURL: imgURL,
@@ -81,9 +81,9 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 		comments: comments
 	});
 	postRequest.setRequestHeader('Content-Type', 'application/json');
-	postRequest.send(requestBody); 
-	
-	
+	postRequest.send(requestBody);
+
+
 }
 
 // function insertTags(tags){
@@ -179,12 +179,12 @@ image.forEach(function(singleImage) {
 		commentButton.addEventListener('click', function() {
 			if (commentInput && commentInput.value) {
 				commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
-				var Request = new XMLHttpRequest(); 
-				Request.open('POST', '/addcomment'); 
-				console.log(singleImage.querySelector('a').getAttribute('href')); 
-				var postRequest = new XMLHttpRequest(); 
-				var requestURL = '/addcomment'; 
-				postRequest.open('POST', requestURL); 	
+				var Request = new XMLHttpRequest();
+				Request.open('POST', '/addcomment');
+				console.log(singleImage.querySelector('a').getAttribute('href'));
+				var postRequest = new XMLHttpRequest();
+				var requestURL = '/addcomment';
+				postRequest.open('POST', requestURL);
 				var comment = commentInput.value
 				console.log(comment);
 				var requestBody = JSON.stringify({
@@ -192,7 +192,7 @@ image.forEach(function(singleImage) {
 				id : singleImage.querySelector('a').getAttribute('href')
 				});
 				postRequest.setRequestHeader('Content-Type', 'application/json');
-				postRequest.send(requestBody); 
+				postRequest.send(requestBody);
 				commentInput.value = "";
 			} else {
 				//alert("");
