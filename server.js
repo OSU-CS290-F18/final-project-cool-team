@@ -35,10 +35,10 @@ app.get('/', function(req, res, next) {
 		if (err) {
 		res.status(500).send("cannot connect to DB.");
 		}
-    res.status(200).render('home', {
-      posts: docs,
-	  tags: docs.tags
-    });
+		res.status(200).render('home', {
+		posts: docs,
+		tags: docs.tags
+		});
  
 	});
 	
@@ -47,19 +47,21 @@ app.get('/', function(req, res, next) {
 app.get('/:id', function(req, res, next) {
     var id = req.params.id;
     var index = findWithAttr(postData, 'id', id);
-    if (postData[id]) {
-      res.status(200).render('partials/foto', {
-        id: postData[index].id,
-        description: postData[index].description,
-        imgURL: postData[index].imgURL,
-        tags: postData[index].tags,
-        comments: postData[index].comments,
-        date: postData[index].date
-  	  });
+    photos.find({}).toArray(function (err, docs) {
+		if (docs[id]) {
+			res.status(200).render('partials/foto', {
+				id: docs[index].id,
+				description: docs[index].description,
+				imgURL: docs[index].imgURL,
+				tags: docs[index].tags,
+				comments: docs[index].comments,
+				date: docs[index].date
+			});
 
-    } else {
-      next();
-    }
+		} 	else {
+			next();
+		}
+	}); 
 });
 
 app.get('*', function (req, res, next) {
