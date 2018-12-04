@@ -194,7 +194,7 @@ function Search(){
 		if(checkboxx.checked == true){
 				console.log('here1');
 				console.log(checkboxx.innerHTML);
-				var tag_val = tags[b].querySelector('label[for="post"]').innerHTML;
+				var tag_val = tags[b].querySelector('label[for]').innerHTML;
 				console.log(tag_val);
 				tag.push(tag_val);
 		}
@@ -217,8 +217,7 @@ function Search(){
 				test = false;
 			}
 		}
-
-		if (!isSubsetOf(posts[i].tags, tags)) {
+		if (!isSubsetOf(posts[i].querySelector('.image-tags').innerHTML, tag)) {
 			test = false;
 		}
 
@@ -231,13 +230,13 @@ function Search(){
 	}
 }
 
-function isSubsetOf(set, subset) {
-    for (let i = 0; i < set.length; i++) {
-        if (subset.indexOf(set[i]) == -1) {
-            return false;
-        }
-    }
-    return true;
+function isSubsetOf(string, arr) {
+		console.log(arr);
+    if (arr.indexOf(string) == -1) {
+        return false;
+    } else {
+				return true
+		}
 }
 
 
