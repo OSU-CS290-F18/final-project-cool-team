@@ -186,14 +186,25 @@ image.forEach(function(singleImage) {
 // });
 
 function Search(){
-	console.log('here');
 	var posts = document.getElementById('images').children;
+	var tags = document.getElementById("tags-left").children;
+	var tag = []; 
+	for(var b = 0; b < tags.length; b++){
+		var checkboxx = tags[b].querySelector('input[type=checkbox]')
+		if(checkboxx.checked == true){
+				console.log('here1'); 
+				console.log(checkboxx.innerHTML); 
+				var tag_val = tags[b].querySelector('label[for="post"]').innerHTML; 
+				console.log(tag_val);
+				
+		}
+	}
 	for(var i = 0; i < posts.length; i++){
-		console.log('here2');
 		var test = true;
 		var title = posts[i].querySelector('.image-title').innerHTML.toUpperCase();
 		var date = posts[i].querySelector('.image-date').innerHTML; 
-		console.log(title);
+		
+		
 		if(document.getElementById('filter-text').value != ''){
 			if(document.getElementById('filter-text').value.toUpperCase() !== title.toUpperCase()){
 				test = false;
