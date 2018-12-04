@@ -156,6 +156,8 @@ image.forEach(function(singleImage) {
 			if (commentInput && commentInput.value) {
 				commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
 				commentInput.value = "";
+			} else {
+				//alert("You must enter a comment before adding one!");
 			}
 
 
@@ -165,26 +167,55 @@ image.forEach(function(singleImage) {
 	});
 });
 
+//image.addEventListener('click', function() {
+	//var commentContainer = image.firstChild.nextSibling;
+	//console.log("clicked");
+//});
+
+
+// var commentContainer = document.getElementById('image-comments');
+// var commentInput = document.getElementById('add-comment-input');
+// var commentButton = document.getElementById('comment-button');
+// commentButton.addEventListener('click', function() {
+// 	if (commentInput && commentInput.value) {
+// 		commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
+// 		document.getElementById('add-comment-input').value = "";
+// 	} else {
+// 		alert("You must enter a comment before adding one!")
+// 	}
+// });
 
 function Search(){
-	var images = document.getElementById('images').children;
-	for(var i = 0; i < images.length; i++){
+	console.log('here');
+	var posts = document.getElementById('images').children;
+	for(var i = 0; i < posts.length; i++){
+		console.log('here2');
 		var test = true;
-		var title = images[i].getElementById('image-title').innerHTML.toUpperCase();
-		if(document.getElementById('filter-text') != ''){
-			if(document.getElementById('filter-city').value.toUpperCase() !== title.toUpperCase()){
+		var title = posts[i].querySelector('.image-title').innerHTML.toUpperCase();
+		var date = posts[i].querySelector('.image-date').innerHTML; 
+		console.log(title);
+		if(document.getElementById('filter-text').value != ''){
+			if(document.getElementById('filter-text').value.toUpperCase() !== title.toUpperCase()){
 				test = false;
 
 			}
 		}
-		if(test = false){
-			posts[i].display = 'none';
+		if(document.getElementById('filter-date').value != ''){
+			if(document.getElementById('filter-date').value != date){
+				test = false; 	
+			}
+		}
+		if(test === false){
+			posts[i].style.display = 'none';
+		}
+		if(test === true){
+			posts[i].style.display = 'block'; 
 		}
 	}
 }
 
 
- var tagContainerLeft = document.getElementById('tags-left');
+var tagContainerLeft = document.getElementById('tags-left');
  var tagContainerRight = document.getElementById('tags-right');
  var newTagInput = document.getElementById('newpost-text');
  var addTagButton = document.getElementById('newtag-button');
@@ -193,6 +224,7 @@ function Search(){
  		var tagHTML = '<div class = "tag"><input type="checkbox" id=' + newTagInput.value + ' name=' + newTagInput.value + '><label for=' + newTagInput.value + '>' + newTagInput.value + '</label></div>'
  		tagContainerLeft.insertAdjacentHTML('beforeend', tagHTML);
  		tagContainerRight.insertAdjacentHTML('beforeend', tagHTML);
+
  		newTagInput.value = "";
  	} else {
  		alert("You must enter a tag before adding one!");
