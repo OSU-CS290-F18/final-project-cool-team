@@ -64,6 +64,11 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 	});
 	var postContainer = document.getElementById('images');
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
+	
+	
+	var Request = new XMLHttpRequest(); 
+	Request.open('POST', '/add'); 
+	Request.send(postHTML); 
 
 }
 

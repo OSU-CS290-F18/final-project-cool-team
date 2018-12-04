@@ -39,17 +39,16 @@ app.get('/', function(req, res, next) {
 		posts: docs,
 		tags: docs.tags
 		});
-		
-		photos.insertOne({
-		imgURL: 'd',
-		description: 'd',
-		tags: 't',
-		date: 'd',
-		comments: 'b'
-		});
 	});
 });
 
+app.post('/add', function(req,res,next){
+	photos.insertOne({
+	imgURL: req.body.imgURL 
+	});
+	
+	
+});
 
 app.get('/:id', function(req, res, next) {
     var id = req.params.id;
