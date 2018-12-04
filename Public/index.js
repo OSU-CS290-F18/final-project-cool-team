@@ -201,16 +201,17 @@ function Search(){
 =======
 /*function Search(){ 
 	var images = document.getElementById('images').children; 
+	var tags = document.getElementById('tags-search').children; 
 	for(var i = 0; i < images.length; i++){
 		var test = true; 
-		var title = images[i].getElementById('image-title').innerHTML.toUpperCase();
-		console.log(title);
-		if(document.getElementById('filter-text') != ''){
-			if(document.getElementById('filter-city').value.toUpperCase() !== title.toUpperCase()){
+		var title = images[i].querySelector('.image-title').innerHTML.toUpperCase();
+		var date1 = images[i].querySelector('.image-date').innerHTML; 
+		var date2 = document.getElementById('filter-date').value
+		console.log(date2);
+		if(document.getElementById('filter-text-name').value != ''){
+			if(document.getElementById('filter-text-name').value.toUpperCase() !== title.toUpperCase()){
 				test = false; 
-		
 			}
-<<<<<<< HEAD
 		}		
 		if(date2 != ''){
 			if(date1 !== date2){
@@ -224,12 +225,7 @@ function Search(){
 		}
 		if(test === true){
 			images[i].style.display = 'block'; 
-=======
->>>>>>> parent of bd27fcb... tags
 		}
 	
-		if(test = false){
-			posts[i].display = 'none';
-		}
 	}
 }
