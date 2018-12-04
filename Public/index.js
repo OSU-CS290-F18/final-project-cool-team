@@ -63,21 +63,16 @@ function insertNewFoto(id, imgURL, description, tags, date, comments) {
 	postContainer.insertAdjacentHTML('beforeend', postHTML);
 
 }
-var tagContainerLeft = document.getElementById('tags-left');
-var tagContainerRight = document.getElementById('tags-right');
-var newTagInput = document.getElementById('newpost-text');
-var addTagButton = document.getElementById('newtag-button');
-addTagButton.addEventListener('click', function() {
-	if (newTagInput && newTagInput.value) {
-		var tagHTML = '<div class = "tag"><input type="checkbox" id=' + newTagInput.value + ' name=' + newTagInput.value + '><label for=' + newTagInput.value + '>' + newTagInput.value + '</label></div>'
-		tagContainerLeft.insertAdjacentHTML('beforeend', tagHTML);
-		tagContainerRight.insertAdjacentHTML('beforeend', tagHTML);
 
-		newTagInput.value = "";
-	} else {
-		alert("You must enter a tag before adding one!");
-	}
-});
+// function insertTags(tags){
+//
+// 	var tagHTML = Handlebars.templates.tag({
+// 		tags: tags
+// 	});
+// 	var tagsContainer = document.getElementById('tags');
+// 	tagsContainer.insertAdjacentHTML('beforeend', tagHTML);
+//
+// }
 
 var currentDate = new Date();
 var day = currentDate.getDate();
@@ -86,6 +81,16 @@ var year = currentDate.getFullYear();
 
 
 var tagsArray = [];
+// var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+//
+// for (var i = 0; i < checkboxes.length; i++) {
+// 	if (checkboxes[i].type == 'checkbox' && checkboxes[i].checked == true) {
+// 		console.log("====----" + checkboxes[i]);
+// 		tagsArray.push(checkboxes[i].name);
+// 	}
+// }
+console.log("=====" + tagsArray);
+
 var description = document.getElementById('newpost-text-imgURL');
 var imgURL = document.getElementById('newpost-text-name');
 var date = "" + month + "/" + day + "/" + year;
@@ -117,6 +122,7 @@ newPost.addEventListener('click', function() {
 		for (var i = 0; i < checkboxes.length; i++) {
 			checkboxes[i].checked = false;
 		}
+		//uncheck tags
 
 	} else {
 		alert("You must enter the description and url fields to make a post");
@@ -145,20 +151,20 @@ commentButton.addEventListener('click', function() {
 	}
 });
 
-function Search(){
-	var images = document.getElementById('images').children;
+function Search(){ 
+	var images = document.getElementById('images').children; 
 	for(var i = 0; i < images.length; i++){
-		var test = true;
+		var test = true; 
 		var title = images[i].getElementById('image-title').innerHTML.toUpperCase();
 		console.log(title);
 		if(document.getElementById('filter-text') != ''){
 			if(document.getElementById('filter-city').value.toUpperCase() !== title.toUpperCase()){
-				test = false;
-
+				test = false; 
+		
 			}
 		}
-
-		if(test == false){
+	
+		if(test = false){
 			posts[i].display = 'none';
 		}
 	}

@@ -31,13 +31,10 @@
 				<input type="text" name="filter-text-name" id="filter-text" class="filter-input">
             </div>
 
-			<section id="tags-left" class='post-tags'>
-        {{#each tags}}
-        <div class = "tag">
-          <input type="checkbox" id={{this}} name={{this}}>
-          <label for={{this}}>{{this}}</label>
-        </div>
-        {{/each}}
+			<section id = "tags">
+				  <div class = "tag">
+  					 <input type="checkbox" id="cat" name="cat">
+  					 <label for="gaming">Cat</label>
 			</section>
 
 			<div class="filter-input-container">
@@ -62,7 +59,7 @@
 				<input type="text" name="newpost-url" id="newpost-text-imgURL" class="newpost-input">
             </div>
 			<a id= "tag_title">tags</a>
-			<section id= "tags-right" class='post-tags'>
+			<section id= "tags" class=>
           {{#each tags}}
           <div class = "tag">
             <input type="checkbox" id={{this}} name={{this}}>
