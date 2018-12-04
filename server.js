@@ -16,6 +16,9 @@ MongoClient.connect(url, function(err, client){
 	console.log("mongodb is connected");
 	db = client.db('test');
 	photos = db.collection('foto'); 
+	photos.find().toArray(function(err, docs){
+		console.log(docs) 
+	});
 });
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -35,13 +38,13 @@ app.get('/', function(req, res, next) {
 		if (err) {
 		res.status(500).send("cannot connect to DB.");
 		}
+		console.log(docs);
     res.status(200).render('home', {
-      posts: docs,
-	  tags: docs.tags
+      posts: docs
+	  
     });
- 
+    tags: postData[0].tags
 	});
-	
 });
 
 app.get('/:id', function(req, res, next) {
