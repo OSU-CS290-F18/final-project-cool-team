@@ -142,31 +142,62 @@ newPost.addEventListener('click', function() {
 
 });
 
-var commentContainer = document.getElementById('image-comments');
+
 var commentInput = document.getElementById('add-comment-input');
 var commentButton = document.getElementById('comment-button');
-commentButton.addEventListener('click', function() {
-	if (commentInput && commentInput.value) {
-		commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
-		document.getElementById('add-comment-input').value = "";
-	} else {
-		alert("You must enter a comment before adding one!")
-	}
+var image = document.querySelectorAll('.image');
+image.forEach(function(singleImage) {
+	singleImage.addEventListener('click', function() {
+		var commentContainer = singleImage.firstChild.nextSibling.childNodes[0].nextSibling.nextSibling.nextSibling.children[3];
+		var addCommentContainer = singleImage.firstChild.nextSibling.childNodes[0].nextSibling.nextSibling.nextSibling.children[4];
+		var commentInput = singleImage.firstChild.nextSibling.childNodes[0].nextSibling.nextSibling.nextSibling.children[4].children[0];
+		var commentButton = singleImage.firstChild.nextSibling.childNodes[0].nextSibling.nextSibling.nextSibling.children[4].children[1];
+		commentButton.addEventListener('click', function() {
+			if (commentInput && commentInput.value) {
+				commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
+				commentInput.value = "";
+			} else {
+				//alert("You must enter a comment before adding one!");
+			}
+
+
+		});
+
+
+	});
 });
 
-/*function Search(){ 
-	var images = document.getElementById('images').children; 
+//image.addEventListener('click', function() {
+	//var commentContainer = image.firstChild.nextSibling;
+	//console.log("clicked");
+//});
+
+
+// var commentContainer = document.getElementById('image-comments');
+// var commentInput = document.getElementById('add-comment-input');
+// var commentButton = document.getElementById('comment-button');
+// commentButton.addEventListener('click', function() {
+// 	if (commentInput && commentInput.value) {
+// 		commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
+// 		document.getElementById('add-comment-input').value = "";
+// 	} else {
+// 		alert("You must enter a comment before adding one!")
+// 	}
+// });
+
+function Search(){
+	var images = document.getElementById('images').children;
 	for(var i = 0; i < images.length; i++){
-		var test = true; 
+		var test = true;
 		var title = images[i].getElementById('image-title').innerHTML.toUpperCase();
 		console.log(title);
 		if(document.getElementById('filter-text') != ''){
 			if(document.getElementById('filter-city').value.toUpperCase() !== title.toUpperCase()){
-				test = false; 
-		
+				test = false;
+
 			}
 		}
-	
+
 		if(test = false){
 			posts[i].display = 'none';
 		}
