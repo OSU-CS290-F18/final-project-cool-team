@@ -188,23 +188,24 @@ image.forEach(function(singleImage) {
 function Search(){
 	var posts = document.getElementById('images').children;
 	var tags = document.getElementById("tags-left").children;
-	var tag = []; 
+	var tag = [];
 	for(var b = 0; b < tags.length; b++){
 		var checkboxx = tags[b].querySelector('input[type=checkbox]')
 		if(checkboxx.checked == true){
-				console.log('here1'); 
-				console.log(checkboxx.innerHTML); 
-				var tag_val = tags[b].querySelector('label[for="post"]').innerHTML; 
+				console.log('here1');
+				console.log(checkboxx.innerHTML);
+				var tag_val = tags[b].querySelector('label[for="post"]').innerHTML;
 				console.log(tag_val);
-				tag.push(tag_val); 
+				tag.push(tag_val);
 		}
 	}
+
 	for(var i = 0; i < posts.length; i++){
 		var test = true;
 		var title = posts[i].querySelector('.image-title').innerHTML.toUpperCase();
-		var date = posts[i].querySelector('.image-date').innerHTML; 
-		
-		
+		var date = posts[i].querySelector('.image-date').innerHTML;
+
+
 		if(document.getElementById('filter-text').value != ''){
 			if(document.getElementById('filter-text').value.toUpperCase() !== title.toUpperCase()){
 				test = false;
@@ -213,17 +214,30 @@ function Search(){
 		}
 		if(document.getElementById('filter-date').value != ''){
 			if(document.getElementById('filter-date').value != date){
-				test = false; 	
+				test = false;
 			}
 		}
-		
-		if(test === false){
+
+		if (!isSubsetOf(posts[i].tags, tags)) {
+			test = false;
+		}
+
+		if(test === false) {
 			posts[i].style.display = 'none';
 		}
-		if(test === true){
-			posts[i].style.display = 'block'; 
+		if(test === true) {
+			posts[i].style.display = 'block';
 		}
 	}
+}
+
+function isSubsetOf(set, subset) {
+    for (let i = 0; i < set.length; i++) {
+        if (subset.indexOf(set[i]) == -1) {
+            return false;
+        }
+    }
+    return true;
 }
 
 
