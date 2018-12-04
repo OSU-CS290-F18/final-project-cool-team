@@ -151,7 +151,7 @@ commentButton.addEventListener('click', function() {
 	}
 });
 
-/*function Search(){ 
+function Search(){ 
 	var images = document.getElementById('images').children; 
 	for(var i = 0; i < images.length; i++){
 		var test = true; 
