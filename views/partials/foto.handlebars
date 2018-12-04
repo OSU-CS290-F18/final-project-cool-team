@@ -1,20 +1,23 @@
 <div class="image">
   <div class="image-contents">
-    <a href="post.html"><img src={{imgURL}} alt={{description}}></a>
+    <a href={{id}}><img src={{imgURL}} alt={{description}}></a>
     <div class="image-info-container">
       <a href="#" class="image-title">{{description}}</a>
-      <div class="image-info-container-tags-dates">
-        <span class="image-tags">#{{this.1.tag}} #{{this.2.tag}} #{{this.3.tag}}</span>
         <span class="image-date">{{date}}</span>
+      <div class="image-info-container-tags-dates">
+        {{#each tags}}
+        <span class="image-tags">#{{this}}</span>
+        {{/each}}
       </div>
       <div id="image-comments">
         Comments:
-        <div class="image-comment">{{this.1.comment}}</div>
-        <div class="image-comment">{{this.2.comment}}</div>
+        {{#each comments}}
+          <div class="image-comment"><i>"{{this}}"</i></div>
+        {{/each}}
       </div>
       <div id="add-comment">
-        <label for="add-comment-input" class="comment-label">Comment</label>
-        <input type="text" name="add-comment-label" id="add-comment-input" class="comment-label">
+        <input type="text" name="add-comment-label" id="add-comment-input" class="comment-label" placeholder="Add a comment..">
+        <button id= "comment-button" class="action-button">Comment</button>
       </div>
     </div>
   </div>
