@@ -3,17 +3,19 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
 var MongoClient = require('mongodb').MongoClient; 
+var bodyParse = require('body-parser'); 
 postData = require('./postData');
 var port= process.env.PORT || 3000;
 var url = "mongodb://sam:6a32Bc91@foto-shard-00-00-cjfic.mongodb.net:27017,foto-shard-00-01-cjfic.mongodb.net:27017,foto-shard-00-02-cjfic.mongodb.net:27017/test?ssl=true&replicaSet=foto-shard-0&authSource=admin&retryWrites=true"
-
+var db; 
+var photos; 
 MongoClient.connect(url, function(err, client){
 	if(err){
 		throw err; 
 	}
 	console.log("mongodb is connected");
-	var db = client.db('test');
-	var photos = db.collection('foto'); 
+	db = client.db('test');
+	photos = db.collection('foto'); 
 	photos.find().toArray(function(err, docs){
 		console.log(docs) 
 	});
@@ -24,9 +26,23 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 
-app.get('/', function(req, res, next) {
+/*app.get('/', function(req, res, next) {
 	res.status(200).render('home',{
 		posts: postData,
+    tags: postData[0].tags
+	});
+});*/
+
+app.get('/', function(req, res, next) {
+	 photos.find({}).toArray(function (err, docs) {
+		if (err) {
+		res.status(500).send("cannot connect to DB.");
+		}
+		console.log(docs);
+    res.status(200).render('home', {
+      posts: docs
+	  
+    });
     tags: postData[0].tags
 	});
 });
