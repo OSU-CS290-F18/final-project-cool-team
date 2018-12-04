@@ -2,12 +2,14 @@
   <div class="image-contents">
     <a href={{id}}><img src={{imgURL}} alt={{description}}></a>
     <div class="image-info-container">
-      <a href="#" class="image-title">{{description}}</a>
-        <span class="image-date">{{date}}</span>
+      <a href="#" class="image-title" id = "image-title">{{description}}</a>
+        <span class="image-date" id = "image-date">{{date}}</span>
       <div class="image-info-container-tags-dates">
-        {{#each tags}}
-        <span class="image-tags">#{{this}}</span>
-        {{/each}}
+        <div id = "image-tags">
+			{{#each tags}}
+			<span class="image-tags">#{{this}}</span>
+			{{/each}}
+		</div> 
       </div>
       <div id="image-comments">
         Comments:
