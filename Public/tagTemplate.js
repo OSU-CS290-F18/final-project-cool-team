@@ -11,6 +11,6 @@ templates['tag'] = template({"compiler":[7,">= 4.0.0"],"main":function(container
     + alias4(((helper = (helper = helpers.tag || (depth0 != null ? depth0.tag : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"tag","hash":{},"data":data}) : helper)))
     + ">"
     + alias4(((helper = (helper = helpers.tag || (depth0 != null ? depth0.tag : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"tag","hash":{},"data":data}) : helper)))
-    + "</label>\n </div>\n";
+    + "</label>\n </div>";
 },"useData":true});
 })();

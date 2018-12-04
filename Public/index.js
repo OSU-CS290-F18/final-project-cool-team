@@ -35,14 +35,17 @@ function hide_tag_maker(){
 
 function filterFunction() {
     document.getElementById("myfilter").classList.toggle("show");
+
+
+
 }
 window.onclick = function(event) {
   if (!event.target.matches('.filter-button')) {
 
     var filters = document.getElementsByClassName("filter-content");
-    var i;
-    for (i = 0; i < filters.length; i++) {
+    for (var i = 0; i < filters.length; i++) {
       var openfilter = filters[i];
+
       if (openfilter.classList.contains('show')) {
         openfilter.classList.remove('show');
       }
@@ -200,3 +203,20 @@ function Search(){
 		}
 	}
 }
+
+
+var tagContainerLeft = document.getElementById('tags-left');
+ var tagContainerRight = document.getElementById('tags-right');
+ var newTagInput = document.getElementById('newpost-text');
+ var addTagButton = document.getElementById('newtag-button');
+ addTagButton.addEventListener('click', function() {
+ 	if (newTagInput && newTagInput.value) {
+ 		var tagHTML = '<div class = "tag"><input type="checkbox" id=' + newTagInput.value + ' name=' + newTagInput.value + '><label for=' + newTagInput.value + '>' + newTagInput.value + '</label></div>'
+ 		tagContainerLeft.insertAdjacentHTML('beforeend', tagHTML);
+ 		tagContainerRight.insertAdjacentHTML('beforeend', tagHTML);
+
+ 		newTagInput.value = "";
+ 	} else {
+ 		alert("You must enter a tag before adding one!");
+ 	}
+ });
