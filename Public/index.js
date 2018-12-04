@@ -186,25 +186,20 @@ image.forEach(function(singleImage) {
 // });
 
 function Search(){
-	console.log('here');
-	var posts = document.getElementById('images').children;
-	for(var i = 0; i < posts.length; i++){
-		console.log('here2');
+	var images = document.getElementById('images').children;
+	for(var i = 0; i < images.length; i++){
 		var test = true;
-		var title = posts[i].querySelector('.image-title').innerHTML.toUpperCase();
+		var title = images[i].getElementById('image-title').innerHTML.toUpperCase();
 		console.log(title);
-		if(document.getElementById('filter-text').value != ''){
-			if(document.getElementById('filter-text').value.toUpperCase() !== title.toUpperCase()){
+		if(document.getElementById('filter-text') != ''){
+			if(document.getElementById('filter-city').value.toUpperCase() !== title.toUpperCase()){
 				test = false;
 
 			}
 		}
 
-		if(test === false){
-			posts[i].style.display = 'none';
-		}
-		if(test === true){
-			posts[i].style.display = 'block'; 
+		if(test = false){
+			posts[i].display = 'none';
 		}
 	}
 }
