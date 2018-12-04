@@ -3,7 +3,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
 var MongoClient = require('mongodb').MongoClient; 
-var bodyParse = require('body-parser'); 
+var bodyParser = require('body-parser'); 
 postData = require('./postData');
 var port= process.env.PORT || 3000;
 var url = "mongodb://sam:6a32Bc91@foto-shard-00-00-cjfic.mongodb.net:27017,foto-shard-00-01-cjfic.mongodb.net:27017,foto-shard-00-02-cjfic.mongodb.net:27017/test?ssl=true&replicaSet=foto-shard-0&authSource=admin&retryWrites=true"
@@ -19,7 +19,7 @@ MongoClient.connect(url, function(err, client){
 });
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-
+app.use(bodyParser.json()); 
 app.use(express.static('public'));
 
 
@@ -39,19 +39,39 @@ app.get('/', function(req, res, next) {
 		posts: docs,
 		tags: docs.tags
 		});
-		
-		photos.insertOne({
-		imgURL: 'd',
-		description: 'd',
-		tags: 't',
-		date: 'd',
-		comments: 'b'
-		});
 	});
 });
 
+app.post('/addpost', function(req,res,next){
+	if(req.body && req.body.id && req.body.imgURL && req.body.description && req.body.tags && req.body.date){
+		photos.insertOne({
+			id: req.body.id,
+			imgURL: req.body.imgURL,
+			description: req.body.description,
+			tags: req.body.tags,
+			date: req.body.date,
+			comments: req.body.comments
+			
+			
+			
+		});
+	};
+});
 
-app.get('/:id', function(req, res, next) {
+app.post('/addcomment', function(req,res,next){
+	console.log(req.body.id);
+	console.log(req.body.comment);
+	var i = parseInt(req.body.id); 
+	if(req.body && req.body.comment){
+		console.log('here');
+		photos.updateOne(
+			{ id : i}, 
+			{ $push: { comments: req.body.comment}}		
+		);
+	};
+});
+
+/*app.get('/:id', function(req, res, next) {
     var id = req.params.id;
     var index = findWithAttr(postData, 'id', id);
     photos.find({}).toArray(function (err, docs) {
@@ -69,7 +89,7 @@ app.get('/:id', function(req, res, next) {
 			next();
 		}
 	}); 
-});
+});*/
 
 app.get('*', function (req, res, next) {
   res.status(404).render('404');
