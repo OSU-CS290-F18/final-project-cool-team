@@ -59,11 +59,15 @@ app.post('/addpost', function(req,res,next){
 });
 
 app.post('/addcomment', function(req,res,next){
+	console.log(req.body.id);
+	console.log(req.body.comment);
+	var i = parseInt(req.body.id); 
 	if(req.body && req.body.comment){
-		photos.updateOne({
-			
-			
-		});
+		console.log('here');
+		photos.updateOne(
+			{ id : i}, 
+			{ $push: { comments: req.body.comment}}		
+		);
 	};
 });
 

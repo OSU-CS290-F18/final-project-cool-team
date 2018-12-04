@@ -161,6 +161,11 @@ newPost.addEventListener('click', function() {
 
 });
 
+function find_id(comment){
+
+
+}
+
 
 var commentInput = document.getElementById('add-comment-input');
 var commentButton = document.getElementById('comment-button');
@@ -174,6 +179,20 @@ image.forEach(function(singleImage) {
 		commentButton.addEventListener('click', function() {
 			if (commentInput && commentInput.value) {
 				commentContainer.insertAdjacentHTML('beforeend', '<div class="image-comment"><i>"' + commentInput.value + '"</i></div>');
+				var Request = new XMLHttpRequest(); 
+				Request.open('POST', '/addcomment'); 
+				console.log(singleImage.querySelector('a').getAttribute('href')); 
+				var postRequest = new XMLHttpRequest(); 
+				var requestURL = '/addcomment'; 
+				postRequest.open('POST', requestURL); 	
+				var comment = commentInput.value
+				console.log(comment);
+				var requestBody = JSON.stringify({
+				comment: comment,
+				id : singleImage.querySelector('a').getAttribute('href')
+				});
+				postRequest.setRequestHeader('Content-Type', 'application/json');
+				postRequest.send(requestBody); 
 				commentInput.value = "";
 			} else {
 				//alert("You must enter a comment before adding one!");
