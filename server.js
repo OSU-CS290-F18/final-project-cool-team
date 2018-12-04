@@ -39,10 +39,17 @@ app.get('/', function(req, res, next) {
 		posts: docs,
 		tags: docs.tags
 		});
- 
+		
+		photos.insertOne({
+		imgURL: 'd',
+		description: 'd',
+		tags: 't',
+		date: 'd',
+		comments: 'b'
+		});
 	});
-	
 });
+
 
 app.get('/:id', function(req, res, next) {
     var id = req.params.id;
@@ -50,7 +57,7 @@ app.get('/:id', function(req, res, next) {
     photos.find({}).toArray(function (err, docs) {
 		if (docs[id]) {
 			res.status(200).render('partials/foto', {
-				id: docs[index].id,
+				id: docs[index]._id,
 				description: docs[index].description,
 				imgURL: docs[index].imgURL,
 				tags: docs[index].tags,
