@@ -2,20 +2,20 @@ var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
-var MongoClient = require('mongodb').MongoClient; 
-var bodyParse = require('body-parser'); 
+var MongoClient = require('mongodb').MongoClient;
+var bodyParse = require('body-parser');
 postData = require('./postData');
 var port= process.env.PORT || 3000;
 var url = "mongodb://sam:6a32Bc91@foto-shard-00-00-cjfic.mongodb.net:27017,foto-shard-00-01-cjfic.mongodb.net:27017,foto-shard-00-02-cjfic.mongodb.net:27017/test?ssl=true&replicaSet=foto-shard-0&authSource=admin&retryWrites=true"
-var db; 
-var photos; 
+var db;
+var photos;
 MongoClient.connect(url, function(err, client){
 	if(err){
-		throw err; 
+		throw err;
 	}
 	console.log("mongodb is connected");
 	db = client.db('test');
-	photos = db.collection('foto'); 
+	photos = db.collection('foto');
 });
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -39,9 +39,9 @@ app.get('/', function(req, res, next) {
       posts: docs,
 	  tags: docs.tags
     });
- 
+
 	});
-	
+
 });
 
 app.get('/:id', function(req, res, next) {
@@ -57,9 +57,15 @@ app.get('/:id', function(req, res, next) {
         date: postData[index].date
   	  });
 
-    } else {
-      next();
-    }
+    } else if (id == '#popular') {
+
+		} else if (id == '#new') {
+
+		} else if (id == '#old') {
+
+		} else {
+			next();
+		}
 });
 
 app.get('*', function (req, res, next) {
