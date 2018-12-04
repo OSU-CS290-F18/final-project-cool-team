@@ -196,7 +196,7 @@ function Search(){
 				console.log(checkboxx.innerHTML); 
 				var tag_val = tags[b].querySelector('label[for="post"]').innerHTML; 
 				console.log(tag_val);
-				
+				tag.push(tag_val); 
 		}
 	}
 	for(var i = 0; i < posts.length; i++){
@@ -216,6 +216,7 @@ function Search(){
 				test = false; 	
 			}
 		}
+		
 		if(test === false){
 			posts[i].style.display = 'none';
 		}
