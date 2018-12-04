@@ -228,7 +228,11 @@ function Search(){
 
 
 		if(document.getElementById('filter-text').value != ''){
-			if(document.getElementById('filter-text').value.toUpperCase() !== title.toUpperCase()){
+			var filter = document.getElementById('filter-text').value.toUpperCase();
+			console.log(filter);
+			console.log(title);
+			if (!title.includes(filter)) {
+				//document.getElementById('filter-text').value.toUpperCase() != title.toUpperCase()){
 				test = false;
 
 			}
@@ -247,7 +251,7 @@ function Search(){
 		}
 
 
-		if (!isSubsetOf(stringsOfTagsInPosts, tag)) {
+		if (!isSubsetOf(stringsOfTagsInPosts, tag) && tag.length != 0) {
 		 	test = false;
 		 }
 
@@ -258,6 +262,7 @@ function Search(){
 			posts[i].style.display = 'block';
 		}
 	}
+	tag = [];
 }
 
 function isSubsetOf(string, arr) {
