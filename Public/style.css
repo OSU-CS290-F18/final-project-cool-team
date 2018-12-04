@@ -100,10 +100,10 @@ header{
 }
 
 .search-container{display:block;margin:20px;border: 1px;width: 150px;height: 220px;text-align:center;padding:5px;background-color: #cef5e0;border-radius: 10px;top:25%;right:85%;position:fixed;box-shadow: 0px 0px 20px 8px #ffffff85;}
-.tag{
+.post-tags{
   overflow: auto;
   width:100px;
-  height:30px;
+  height:90px;
   margin:auto;
   border-left: 1px solid #c4e2d2
   ;border-right: 1px solid #c4e2d2;
