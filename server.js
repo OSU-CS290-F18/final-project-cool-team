@@ -41,7 +41,9 @@ app.get('/', function(req, res, next) {
 
 		for (var i = 0; i < docs.length; i++) {
 			for (var j = 0; j < docs[i].tags.length; j++) {
-				arrayOfTags.push(docs[i].tags[j]);
+				if (!arrayOfTags.includes(docs[i].tags[j])) {
+					arrayOfTags.push(docs[i].tags[j]);
+				}
 			}
 		}
 		res.status(200).render('home', {
